@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Anonymous";
+  src: url("~@/assets/fonts/AnonymousPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Anonymous";
+  src: url("~@/assets/fonts/AnonymousPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+// font sizes
+$font-size-base: 1rem; // Base size, usually for body text
+$font-size-sm: 0.8rem; // Smaller text
+$font-size-md: 1rem; // Medium text, can be used for base as well
+$font-size-lg: 1.25rem; // Large text
+$font-size-xl: 1.563rem; // Extra large text, for headings
+$font-size-xxl: 1.953rem; // Extra extra large text, for main headings
+$font-size-xxxl: 2.441rem; // Extra extra extra large text, for main titles
+
+// colors
+
+// breakpoints
+
+$small-mobile: 480px; // until 480px for small devices
+$mobile: 768px; // from 481px to 768px for mobiles
+$tablet: 1024px; // from 769px to 1024px for tablets
+$default-desktop: 1600px; // from 1025px to 1600px for larger desktops
+$big-desktop: 2000px; // from 1601px to 2000px for big desktop screens
+$large-desktop: 3000px; // from 2001px to 3000px for very large desktop screens
+
+// animations
+.fade-in-bottom {
+  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
