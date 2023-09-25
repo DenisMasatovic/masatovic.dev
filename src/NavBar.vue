@@ -7,23 +7,25 @@
     </div>
     <div class="rightHalf">
       <div class="links">
-        <a
-          href="/projekte"
+        <span
+          @click="$router.push('/projekte')"
           :class="currentRoute === '/projekte' ? 'selected' : ''"
-          >Projekte</a
+          >Projekte</span
         >
-        <a
-          href="/techstack"
+        <span
+          @click="$router.push('/techstack')"
           :class="currentRoute === '/techstack' ? 'selected' : ''"
-          >Tech-Stack</a
+          >Tech-Stack</span
         >
-        <a href="/profil" :class="currentRoute === '/profil' ? 'selected' : ''"
-          >Profil</a
+        <span
+          @click="$router.push('/profil')"
+          :class="currentRoute === '/profil' ? 'selected' : ''"
+          >Profil</span
         >
-        <a
-          href="/partner"
+        <span
+          @click="$router.push('/partner')"
           :class="currentRoute === '/partner' ? 'selected' : ''"
-          >Partner</a
+          >Partner</span
         >
 
         <MyButton
@@ -56,8 +58,9 @@ export default {
 .navBarWrapper {
   padding: 2rem 5rem;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
+  height: 5vh;
   .leftHalf {
     width: 30%;
     display: flex;
@@ -69,7 +72,8 @@ export default {
   }
   .rightHalf {
     .links {
-      a {
+      span {
+        cursor: pointer;
         color: #fff;
         text-decoration: none;
       }

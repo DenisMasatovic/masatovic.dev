@@ -24,7 +24,7 @@ export default {
 
 button {
   font-family: "Anonymous";
-  padding: 0.7em 1.2em;
+  padding: 0.5em 0.8em;
   cursor: pointer;
   border: 2px solid white;
   display: flex;
