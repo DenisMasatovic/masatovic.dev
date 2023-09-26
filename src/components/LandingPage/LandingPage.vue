@@ -58,7 +58,7 @@ export default {
     position: absolute;
     top: 25%;
     @media (max-width: $mobile) {
-      top: 15%;
+      top: 25%;
       right: 50%;
       justify-content: center;
     }
@@ -102,6 +102,7 @@ export default {
 
     @media (max-width: $mobile) {
       left: 0;
+      height: 20rem;
     }
   }
 }

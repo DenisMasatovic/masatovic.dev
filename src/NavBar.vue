@@ -100,23 +100,25 @@ export default {
   }
 }
 .mobileNavBarWrapper {
-  padding: 5% 2rem;
   display: flex;
+  padding: 5% 1rem;
   height: 5vh;
-
+  position: relative;
   :root {
     --bar-bg: #fff;
   }
 
   .menu-icon {
-    position: relative;
+    position: absolute;
+    top: 50%;
     width: 5%;
+    height: 5%;
     cursor: pointer;
     margin-bottom: 5px;
     @media (max-width: $mobile) {
-    font-size: $font-size-xl;
-    margin-bottom: 0;
-  }
+      font-size: $font-size-xl;
+      margin-bottom: 0;
+    }
     .menu-icon__cheeckbox {
       display: block;
       width: 100%;
@@ -137,6 +139,10 @@ export default {
       bottom: 0;
       width: 22px;
       height: 12px;
+      @media (max-width: $mobile) {
+        width: 18px;
+        height: 10px;
+      }
     }
     span {
       position: absolute;
@@ -191,7 +197,6 @@ export default {
 }
 .mobilePortfolioTitleWrapper {
   width: 100%;
-  margin-right: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +208,6 @@ export default {
 
   @media (max-width: $mobile) {
     font-size: $font-size-xl;
-    margin-bottom: 5px;
   }
 }
 </style>
