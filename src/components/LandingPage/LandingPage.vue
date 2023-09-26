@@ -68,7 +68,7 @@ export default {
     display: flex;
     justify-content: flex-end;
 
-    @media (max-width: $default-desktop) {
+    @media (max-width: $tablet) {
       width: 100%;
       justify-content: center;
     }
@@ -84,7 +84,7 @@ export default {
       width: 35%;
       text-align: start;
 
-      @media (max-width: $default-desktop) {
+      @media (max-width: $tablet) {
         width: 50%;
         text-align: center;
       }
