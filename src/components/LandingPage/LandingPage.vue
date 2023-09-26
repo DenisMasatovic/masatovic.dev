@@ -10,6 +10,19 @@
       class="memoji"
       src="../../assets/images/landing_page_desktop_memoji.png"
       alt="Denis Masatovic"
+      v-if="isDesktopSize"
+    />
+    <img
+      class="memoji"
+      src="../../assets/images/landing_page_tablet_memoji.png"
+      alt="Denis Masatovic"
+      v-if="isTabletSize && !isMobileSize"
+    />
+    <img
+      class="memoji"
+      src="../../assets/images/landing_page_mobile_memoji.png"
+      alt="Denis Masatovic"
+      v-if="isMobileSize"
     />
   </div>
 </template>
@@ -19,6 +32,17 @@ import ThreeDDesktop from "./3DHeroSection/3DDesktop.vue";
 export default {
   components: {
     ThreeDDesktop,
+  },
+  computed: {
+    isDesktopSize() {
+      return window.innerWidth >= 1024;
+    },
+    isTabletSize() {
+      return window.innerWidth <= 1024 && window.innerHeight > 768;
+    },
+    isMobileSize() {
+      return window.innerWidth < 768;
+    },
   },
 };
 </script>
@@ -32,12 +56,26 @@ export default {
   height: 85vh;
   .threedmodel {
     position: absolute;
-    margin-top: 7%;
+    top: 25%;
+    @media (max-width: $mobile) {
+      top: 15%;
+      right: 50%;
+      justify-content: center;
+    }
   }
   .slogan {
     width: 90%;
     display: flex;
     justify-content: flex-end;
+
+    @media (max-width: $default-desktop) {
+      width: 100%;
+      justify-content: center;
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+      justify-content: center;
+    }
 
     span {
       margin-top: 10%;
@@ -45,12 +83,26 @@ export default {
       font-weight: bold;
       width: 35%;
       text-align: start;
+
+      @media (max-width: $default-desktop) {
+        width: 50%;
+        text-align: center;
+      }
+      @media (max-width: $mobile) {
+        width: 80%;
+        text-align: end;
+        font-size: $font-size-lg;
+      }
     }
   }
   .memoji {
     position: absolute;
     bottom: 0;
     right: 0%;
+
+    @media (max-width: $mobile) {
+      left: 0;
+    }
   }
 }
 </style>

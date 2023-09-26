@@ -1,5 +1,5 @@
 <template>
-  <div class="navBarWrapper">
+  <div class="navBarWrapper" v-if="isDesktopSize">
     <div class="leftHalf">
       <span class="portfolioTitle" @click="$router.push('/')"
         >masatovic.dev</span
@@ -38,6 +38,20 @@
       </div>
     </div>
   </div>
+  <div v-if="!isDesktopSize" class="mobileNavBarWrapper">
+    <div class="menu-icon">
+      <input class="menu-icon__cheeckbox" type="checkbox" />
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="mobilePortfolioTitleWrapper">
+      <span class="portfolioTitle" @click="$router.push('/')"
+        >masatovic.dev</span
+      >
+    </div>
+  </div>
 </template>
 <script>
 import MyButton from "./shared/MyButton.vue";
@@ -48,6 +62,9 @@ export default {
   computed: {
     currentRoute() {
       return this.$router.currentRoute.value.path;
+    },
+    isDesktopSize() {
+      return window.innerWidth >= 1024;
     },
   },
 };
@@ -64,11 +81,6 @@ export default {
   .leftHalf {
     width: 30%;
     display: flex;
-    .portfolioTitle {
-      font-size: $font-size-xxxl;
-      font-weight: bold;
-      cursor: pointer;
-    }
   }
   .rightHalf {
     .links {
@@ -85,6 +97,113 @@ export default {
       text-decoration: underline !important;
       font-weight: bold;
     }
+  }
+}
+.mobileNavBarWrapper {
+  padding: 5% 2rem;
+  display: flex;
+  height: 5vh;
+
+  :root {
+    --bar-bg: #fff;
+  }
+
+  .menu-icon {
+    position: relative;
+    width: 5%;
+    cursor: pointer;
+    margin-bottom: 5px;
+    @media (max-width: $mobile) {
+    font-size: $font-size-xl;
+    margin-bottom: 0;
+  }
+    .menu-icon__cheeckbox {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+      z-index: 2;
+      -webkit-touch-callout: none;
+      position: absolute;
+      opacity: 0;
+    }
+    div {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 22px;
+      height: 12px;
+    }
+    span {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--bar-bg, #fff);
+      border-radius: 1px;
+      transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+      &:first-of-type {
+        top: 0;
+      }
+      &:last-of-type {
+        bottom: 0;
+      }
+    }
+    &.active,
+    .menu-icon__cheeckbox:checked + div {
+      span {
+        &:first-of-type {
+          transform: rotate(45deg);
+          top: 5px;
+        }
+        &:last-of-type {
+          transform: rotate(-45deg);
+          bottom: 5px;
+        }
+      }
+    }
+
+    &.active:hover span:first-of-type,
+    &.active:hover span:last-of-type,
+    &:hover .menu-icon__cheeckbox:checked + div span:first-of-type,
+    &:hover .menu-icon__cheeckbox:checked + div span:last-of-type {
+      width: 22px;
+    }
+
+    &:hover {
+      // no need hover effect on mobile.
+      @media (min-width: 1024px) {
+        span:first-of-type {
+          width: 26px;
+        }
+
+        span:last-of-type {
+          width: 12px;
+        }
+      }
+    }
+  }
+}
+.mobilePortfolioTitleWrapper {
+  width: 100%;
+  margin-right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portfolioTitle {
+  font-size: $font-size-xxxl;
+  font-weight: bold;
+  cursor: pointer;
+
+  @media (max-width: $mobile) {
+    font-size: $font-size-xl;
+    margin-bottom: 5px;
   }
 }
 </style>
