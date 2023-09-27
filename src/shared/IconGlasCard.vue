@@ -35,13 +35,15 @@ export default {
   position: relative;
   transition: transform 0.3s ease; /* Add transition effect for smooth scaling */
   cursor: pointer;
-  &:hover {
-    transform: scale(1.1); /* Scale the size of the card by 20% on hover */
+  @media (min-width: $tablet) {
+    &:hover {
+      transform: scale(1.1); /* Scale the size of the card by 20% on hover */
 
-    .cardTitle,
-    .cardIcon {
-      transition: 0.3s ease;
-      opacity: 1;
+      .cardTitle,
+      .cardIcon {
+        transition: 0.3s ease;
+        opacity: 1;
+      }
     }
   }
 }
