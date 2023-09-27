@@ -52,8 +52,10 @@ button {
   }
 }
 .staticPrimary {
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: $masatovic-purple;
+  border: 2px solid $masatovic-purple;
+  font-weight: bold;
   border-radius: 25px;
 }
 .secondary {
@@ -61,5 +63,11 @@ button {
   border: 2px solid white;
   border-radius: 25px;
   background-color: transparent;
+  &:hover {
+    background-color: $masatovic-purple;
+    border: 2px solid $masatovic-purple;
+    color: white;
+    font-weight: bold;
+  }
 }
 </style>

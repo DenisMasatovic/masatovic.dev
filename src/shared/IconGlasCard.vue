@@ -48,7 +48,7 @@ export default {
 .mainCard {
   padding: 2rem;
   height: 500px;
-  width: 350px;
+  width: 22vw;
 
   @media (max-width: $tablet) {
     height: 200px;
@@ -88,8 +88,8 @@ export default {
 
 .subCard {
   padding: 1.5rem;
-  height: 200px;
-  width: 320px;
+  height: 14vw;
+  width: 22vw;
 
   @media (max-width: $tablet) {
     height: 125px;
