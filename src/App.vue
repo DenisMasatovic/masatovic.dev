@@ -1,14 +1,22 @@
 <template>
   <NavBar></NavBar>
   <router-view />
+  <MobileNavLinks></MobileNavLinks>
 </template>
 
 <script>
+import MobileNavLinks from "./MobileNavLinks.vue";
 import NavBar from "./NavBar.vue";
 
 export default {
   name: "App",
-  components: { NavBar },
+  components: { NavBar, MobileNavLinks },
+
+  computed: {
+    showMobileNav() {
+      return this.$store.getters.showMobileNavigation;
+    },
+  },
 };
 </script>
 

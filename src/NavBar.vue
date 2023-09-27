@@ -39,15 +39,15 @@
     </div>
   </div>
   <div v-if="!isDesktopSize" class="mobileNavBarWrapper">
-    <div class="menu-icon">
-      <input class="menu-icon__cheeckbox" type="checkbox" />
+    <div class="menu-icon" @click="showMobileNav = !showMobileNav">
+      <input class="menu-icon__cheeckbox" type="checkbox" id="burger" />
       <div>
         <span></span>
         <span></span>
       </div>
     </div>
     <div class="mobilePortfolioTitleWrapper">
-      <span class="portfolioTitle" @click="$router.push('/')"
+      <span class="portfolioTitle" @click="redirectToHome()"
         >masatovic.dev</span
       >
     </div>
@@ -65,6 +65,20 @@ export default {
     },
     isDesktopSize() {
       return window.innerWidth >= 1024;
+    },
+    showMobileNav: {
+      get() {
+        return this.$store.getters.showMobileNavigation;
+      },
+      set(value) {
+        this.$store.commit("setShowMobileNavigation", value);
+      },
+    },
+  },
+  methods: {
+    redirectToHome() {
+      this.$router.push("/");
+      this.$store.commit("setShowMobileNavigation", false);
     },
   },
 };
@@ -104,7 +118,7 @@ export default {
 .mobileNavBarWrapper {
   display: flex;
   max-height: 10vh;
-  padding: 10% 1rem;
+  padding: 10% 1.5rem;
   box-sizing: border-box; // Add this line
 
   position: relative;
