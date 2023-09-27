@@ -89,6 +89,6 @@ export default {
   }
 }
 .workspaceButton {
-  margin-bottom: 20rem;
+  margin-bottom: 10rem;
 }
 </style>

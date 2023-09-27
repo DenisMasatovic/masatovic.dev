@@ -73,11 +73,12 @@ export default {
 @import "./assets/sass/style.scss";
 
 .navBarWrapper {
-  padding: 2rem 5rem;
+  padding: 3rem 5rem;
+  box-sizing: border-box;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  height: 5vh;
+  max-height: 15vh;
   .leftHalf {
     width: 30%;
     z-index: 1;
@@ -102,8 +103,10 @@ export default {
 }
 .mobileNavBarWrapper {
   display: flex;
-  padding: 5% 1rem;
-  height: 5vh;
+  max-height: 10vh;
+  padding: 10% 1rem;
+  box-sizing: border-box; // Add this line
+
   position: relative;
   :root {
     --bar-bg: #fff;

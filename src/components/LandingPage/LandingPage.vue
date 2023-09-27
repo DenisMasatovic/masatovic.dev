@@ -60,11 +60,21 @@ export default {
 .heroSection {
   display: flex;
   height: 85vh;
+  @media (max-width: $tablet) {
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: $mobile) {
+    height: 90vh;
+  }
   .threedmodel {
     position: absolute;
     top: 25%;
+    @media (max-width: $tablet) {
+      top: 15%;
+    }
     @media (max-width: $mobile) {
-      top: 25%;
+      top: 15%;
       right: -5%;
       justify-content: center;
     }

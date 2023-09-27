@@ -79,19 +79,29 @@ export default {
 @import "../../assets/sass/style.scss";
 
 .workspace {
-  padding: 5rem;
+  height: 85vh;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
   @media (max-width: $tablet) {
-    padding: 1rem 7rem;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding: 2rem 7rem;
   }
   @media (max-width: $mobile) {
-    padding: 2rem 1rem;
+    height: 90vh;
+    padding: 1rem 1rem;
   }
+
   .cards {
     display: flex;
     justify-content: space-between;
     @media (max-width: $tablet) {
       flex-direction: column; // center the items vertically
       gap: 2rem;
+    }
+    @media (max-width: $mobile) {
+      gap: 1rem;
     }
     .mainCard {
       @media (max-width: $tablet) {
@@ -127,11 +137,12 @@ export default {
       width: 15rem;
       height: 15rem;
       left: -5%;
-      top: 20%;
+      top: 10%;
     }
     @media (max-width: $mobile) {
       width: 9rem;
       height: 9rem;
+      top: 12%;
     }
   }
   .bubble2 {
@@ -142,7 +153,7 @@ export default {
     @media (max-width: $tablet) {
       width: 8rem;
       height: 8rem;
-      top: 10%;
+      top: 2%;
       left: auto;
       right: 30%;
     }
@@ -152,6 +163,7 @@ export default {
       top: 8%;
       left: auto;
       right: 20%;
+      top: 1%;
     }
   }
   .bubble3 {
@@ -171,7 +183,7 @@ export default {
       width: 6rem;
       height: 6rem;
       right: -5%;
-      top: 27%;
+      top: 17%;
     }
   }
   .bubble4 {
@@ -189,7 +201,7 @@ export default {
       width: 7rem;
       height: 7rem;
       left: -5%;
-      top: 50%;
+      top: 40%;
     }
   }
   .bubble5 {
@@ -200,14 +212,14 @@ export default {
     @media (max-width: $tablet) {
       width: 10rem;
       height: 10rem;
-      bottom: 10%;
+      bottom: 2%;
       top: auto;
       left: 25%;
     }
     @media (max-width: $mobile) {
       width: 6rem;
       height: 6rem;
-      bottom: 18%;
+      bottom: 22%;
       left: 20%;
     }
   }
@@ -225,7 +237,7 @@ export default {
     @media (max-width: $mobile) {
       width: 6rem;
       height: 6rem;
-      bottom: 50%;
+      bottom: 57%;
       left: 42%;
     }
   }
@@ -238,15 +250,14 @@ export default {
       width: 6rem;
       height: 6rem;
       top: auto;
-      bottom: 30%;
+      bottom: 20%;
       right: 7%;
     }
     @media (max-width: $mobile) {
       width: 8rem;
       height: 8rem;
       right: -5%;
-      bottom: 18%;
-
+      bottom: 20%;
     }
   }
 }
