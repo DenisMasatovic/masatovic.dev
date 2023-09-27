@@ -1,11 +1,13 @@
 <template>
   <div class="sceneWrapper">
     <div ref="mount"></div>
-    <MyButton
-      buttonClass="secondary"
-      buttonText="Workspace betreten"
-      @click="$router.push('/workspace')"
-    ></MyButton>
+    <div class="workspaceButton">
+      <MyButton
+        buttonClass="secondary"
+        buttonText="Workspace betreten"
+        @click="$router.push('/workspace')"
+      ></MyButton>
+    </div>
   </div>
 </template>
 
@@ -78,14 +80,15 @@ export default {
 <style scoped>
 .sceneWrapper {
   display: flex;
-  flex-flow: column;
+  flex-flow: row-reverse;
   align-items: center;
   div {
     position: absolute;
     top: 0;
     left: 0;
   }
-
- 
+}
+.workspaceButton {
+  margin-bottom: 20rem;
 }
 </style>

@@ -32,6 +32,7 @@ button {
   justify-content: center;
   transition: 0.15s;
   font-size: $font-size-md;
+  max-width: fit-content;
   &:disabled {
     opacity: 0.6;
     cursor: default;
@@ -42,6 +43,13 @@ button {
   color: black;
   background-color: white;
   border-radius: 25px;
+
+  &:hover {
+    background-color: $masatovic-purple;
+    border: 2px solid $masatovic-purple;
+    color: white;
+    font-weight: bold;
+  }
 }
 .staticPrimary {
   color: black;

@@ -80,6 +80,7 @@ export default {
   height: 5vh;
   .leftHalf {
     width: 30%;
+    z-index: 1;
     display: flex;
   }
   .rightHalf {
@@ -141,7 +142,7 @@ export default {
       height: 12px;
       @media (max-width: $mobile) {
         width: 18px;
-        height: 10px;
+        height: 12px;
       }
     }
     span {

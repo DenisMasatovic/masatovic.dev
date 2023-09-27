@@ -1,7 +1,9 @@
 <template>
   <div class="heroSection">
     <div class="threedmodel">
-      <ThreeDDesktop></ThreeDDesktop>
+      <ThreeDDesktop v-if="isDesktopSize"></ThreeDDesktop>
+      <ThreeDTablet v-if="isTabletSize && !isMobileSize"></ThreeDTablet>
+      <ThreeDMobile v-if="isMobileSize"></ThreeDMobile>
     </div>
     <div class="slogan">
       <span>Digitalisierung aus Leidenschaft.</span>
@@ -28,10 +30,14 @@
 </template>
 <script>
 import ThreeDDesktop from "./3DHeroSection/3DDesktop.vue";
+import ThreeDTablet from "./3DHeroSection/3DTablet.vue";
+import ThreeDMobile from "./3DHeroSection/3DMobile.vue";
 
 export default {
   components: {
     ThreeDDesktop,
+    ThreeDTablet,
+    ThreeDMobile,
   },
   computed: {
     isDesktopSize() {
@@ -59,7 +65,7 @@ export default {
     top: 25%;
     @media (max-width: $mobile) {
       top: 25%;
-      right: 50%;
+      right: -5%;
       justify-content: center;
     }
   }
