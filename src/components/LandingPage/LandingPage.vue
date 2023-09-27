@@ -64,9 +64,7 @@ export default {
     position: relative;
     overflow: hidden;
   }
-  @media (max-width: $mobile) {
-    height: 90vh;
-  }
+ 
   .threedmodel {
     position: absolute;
     top: 25%;
