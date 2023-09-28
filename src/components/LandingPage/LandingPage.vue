@@ -6,7 +6,7 @@
       <ThreeDMobile v-if="isMobileSize"></ThreeDMobile>
     </div>
     <div class="slogan">
-      <span>Digitalisierung aus Leidenschaft.</span>
+      <span>Entwicklung aus Leidenschaft.</span>
     </div>
     
   </div>

@@ -1,18 +1,22 @@
 <template>
-  <div :class="'card' + ' ' + cardClass">
+  <div class="card">
     <div class="cardTitle">{{ cardTitle }}</div>
-    <div class="cardIcon">
-      <img :src="cardIconPath" />
+    <div class="cardImagesWrapper">
+      <div class="cardImages">
+        <div v-for="(imagePath, index) in cardImagePaths" :key="index">
+          <img :src="imagePath" class="cardImage" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  props: ["cardClass", "cardTitle", "cardIconPath"],
+  props: ["cardTitle", "cardImagePaths"],
 };
 </script>
 <style scoped lang="scss">
-@import "../assets/sass/style.scss";
+@import "../../assets/sass/style.scss";
 
 .card {
   display: flex;
@@ -24,7 +28,7 @@ export default {
       rgba(255, 255, 255, 0.4) 1.06%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("../assets/images/frost.png");
+    url("https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ffrost.png?alt=media");
   //background-size: cover; /* This will scale the image to cover the entire element */
   background-repeat: repeat; /* This will prevent the image from repeating */
   border: 1px solid rgba(183, 183, 183, 0.4);
@@ -46,60 +50,17 @@ export default {
       }
     }
   }
-}
-.mainCard {
-  padding: 2rem;
-  height: 500px;
-  width: 22vw;
-
-  @media (max-width: $tablet) {
-    height: 200px;
-    width: 100%;
-    padding: 1.5rem;
-  }
-  @media (max-width: $mobile) {
-    padding: 1rem;
-    height: 150px;
-  }
-  .cardTitle {
-    font-size: $font-size-xxl;
-    font-weight: bold;
-    opacity: 70%;
-    @media (max-width: $mobile) {
-      font-size: $font-size-lg;
-    }
-  }
-  .cardIcon {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-    opacity: 70%;
-    @media (max-width: $tablet) {
-      height: 70%;
-      img {
-        width: 70px;
-        @media (max-width: $mobile) {
-          width: 70px;
-        }
-      }
-    }
-  }
-}
-
-.subCard {
   padding: 1.5rem;
-  height: 14vw;
-  width: 22vw;
+  height: 12vw;
+  width: 38vw;
 
   @media (max-width: $tablet) {
-    height: 125px;
+    height: 175px;
     width: 100%;
   }
   @media (max-width: $mobile) {
     padding: 1rem;
-    height: 100px;
+    height: 120px;
   }
   .cardTitle {
     font-size: $font-size-xl;
@@ -109,21 +70,35 @@ export default {
       font-size: $font-size-lg;
     }
   }
-  .cardIcon {
+  .cardImagesWrapper {
     width: 100%;
+    height: 80%;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100%;
-    opacity: 70%;
-
-    img {
-      transform: scale(0.7);
+    justify-content: center;
+    .cardImages {
+      width: 60%;
       @media (max-width: $tablet) {
-        width: 50px;
+        width: 70%;
       }
       @media (max-width: $mobile) {
-        width: 50px;
+        width: 80%;
+      }
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      opacity: 70%;
+
+      img.cardImage {
+        height: 100px;
+        object-fit: cover;
+        @media (max-width: $tablet) {
+          width: auto;
+        }
+        @media (max-width: $mobile) {
+          height: 60px;
+
+          width: auto;
+        }
       }
     }
   }

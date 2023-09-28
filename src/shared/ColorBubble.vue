@@ -1,8 +1,19 @@
 <template>
-  <div class="bubble"></div>
+  <div class="bubble fade-in-bottom" :style="bubbleStyle"></div>
 </template>
 <script>
-export default {};
+export default {
+  props: ["color"],
+  computed: {
+    bubbleStyle() {
+      // If color prop is provided, use it for the linear gradient, else use the default color
+      const color = this.color || "#651efe";
+      return {
+        background: `linear-gradient(40deg, ${color} 11.48%, rgba(137, 207, 240, 0) 94.23%)`,
+      };
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
 @import "../assets/sass/style.scss";
@@ -18,16 +29,10 @@ export default {};
   }
 }
 
+
 .bubble {
   position: absolute;
-  background: linear-gradient(
-    40deg,
-    $masatovic-purple 11.48%,
-    rgba(137, 207, 240, 0) 94.23%
-  );
   border-radius: 360px;
-  @media (max-width: $tablet) {
-    animation: float 3s ease-in-out infinite; // Add this line
-  }
+  animation: float 3s ease-in-out infinite;
 }
 </style>

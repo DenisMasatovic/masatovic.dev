@@ -40,13 +40,8 @@
   </div>
 </template>
 <script>
-import IconGlasCard from "@/shared/IconGlasCard.vue";
+import IconGlasCard from "@/shared/cards/IconGlasCard.vue";
 import ColorBubble from "@/shared/ColorBubble.vue";
-import codeIcon from "@/assets/icons/icon_code.png";
-import layerIcon from "@/assets/icons/icon_layers.png";
-import personIcon from "@/assets/icons/icon_person.png";
-import peopleIcon from "@/assets/icons/icon_people.png";
-import mailIcon from "@/assets/icons/icon_mail.png";
 export default {
   components: {
     IconGlasCard,
@@ -55,17 +50,23 @@ export default {
 
   data() {
     return {
-      projectIcon: codeIcon,
-      techStackIcon: layerIcon,
-      profileIcon: personIcon,
-      partnersIcon: peopleIcon,
-      contactIcon: mailIcon,
+      projectIcon:
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_code.png?alt=media",
+      techStackIcon:
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_layers.png?alt=media",
+      profileIcon:
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_person.png?alt=media",
+      partnersIcon:
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_people.png?alt=media",
+      contactIcon:
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_mail.png?alt=media",
     };
   },
   methods: {
     moveBubble(event) {
-      const bubbles = document.querySelectorAll('[class^="bubble"]');
+      const bubbles = document.querySelectorAll(".bubble");
       bubbles.forEach((bubble) => {
+
         const amount = bubble.getBoundingClientRect().width / 15;
         const x = (event.clientX - window.innerWidth / 2) / window.innerWidth;
         const y = (event.clientY - window.innerHeight / 2) / window.innerHeight;

@@ -11,6 +11,11 @@ const routes = [
     name: "Workspace",
     component: () => import("@/components/Workspace/MyWorkspace.vue"),
   },
+  {
+    path: "/projekte",
+    name: "Projekte",
+    component: () => import("@/components/Projects/ProjectsList.vue"),
+  },
   // other routes...
 ];
 
