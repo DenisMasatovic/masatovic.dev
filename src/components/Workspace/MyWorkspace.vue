@@ -77,7 +77,15 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "../../assets/sass/style.scss";
-
+@keyframes scaleAnimation {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
 .workspace {
   height: 85vh;
   padding: 2rem 5rem;
@@ -90,7 +98,7 @@ export default {
   }
   @media (max-width: $mobile) {
     height: 90vh;
-    padding: 1rem 1rem;
+    padding: 1rem 1.5rem;
   }
 
   .cards {
@@ -109,6 +117,10 @@ export default {
         justify-content: flex-start; // center the items horizontally
         align-items: flex-start; // center the items vertically
       }
+      .mainCard {
+        animation: scaleAnimation 0.5s ease-out;
+        animation-delay: 0s; // starts immediately
+      }
     }
 
     .subCards {
@@ -124,6 +136,18 @@ export default {
       @media (max-width: $mobile) {
         column-gap: 3rem;
         padding: 1rem;
+      }
+
+      .subCard:nth-child(1),
+      .subCard:nth-child(3) {
+        animation: scaleAnimation 0.5s ease-out;
+        animation-delay: 0.1s; // starts after 1s
+      }
+
+      .subCard:nth-child(2),
+      .subCard:nth-child(4) {
+        animation: scaleAnimation 0.5s ease-out;
+        animation-delay: 0.2s; // starts after 1.5s
       }
     }
   }

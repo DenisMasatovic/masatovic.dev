@@ -5,7 +5,7 @@
       'slide-in': showMobileNav === true,
       'slide-out': showMobileNav === false,
     }"
-    v-if="!isDesktopSize && enableNavBar"
+    v-if="!isDesktopSize && navMenuEnabled"
   >
     <div class="links">
       <span
@@ -44,15 +44,11 @@ export default {
   components: {
     MyButton,
   },
-  data() {
-    return {
-      enableNavBar: false,
-    };
-  },
+
   watch: {
     showMobileNav: {
       handler() {
-        this.enableNavBar = true;
+        this.$store.commit("setNavMenuEnableStatus", true);
       },
     },
   },
@@ -70,6 +66,9 @@ export default {
     },
     isDesktopSize() {
       return window.innerWidth >= 1024;
+    },
+    navMenuEnabled() {
+      return this.$store.getters.navMenuEnabled;
     },
   },
   methods: {

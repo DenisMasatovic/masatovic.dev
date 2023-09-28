@@ -19,13 +19,13 @@ $font-size-xxxl: 2.441rem; // Extra extra extra large text, for main titles
 
 // colors
 $masatovic-blue: #89cff0;
-$masatovic-purple: #651EFE;
+$masatovic-purple: #651efe;
 
 // breakpoints
 
 $small-mobile: 480px; // until 480px for small devices
 $mobile: 767px; // from 481px to 768px for mobiles
-$tablet: 1024px; // from 769px to 1024px for tablets
+$tablet: 1025px; // from 769px to 1024px for tablets
 $default-desktop: 1600px; // from 1025px to 1600px for larger desktops
 $big-desktop: 2000px; // from 1601px to 2000px for big desktop screens
 $large-desktop: 3000px; // from 2001px to 3000px for very large desktop screens
@@ -35,4 +35,29 @@ $large-desktop: 3000px; // from 2001px to 3000px for very large desktop screens
   -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1)
     both;
   animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

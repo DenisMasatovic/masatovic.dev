@@ -37,7 +37,7 @@ export default {
   cursor: pointer;
   @media (min-width: $tablet) {
     &:hover {
-      transform: scale(1.1); /* Scale the size of the card by 20% on hover */
+      transform: scale(1.05); /* Scale the size of the card by 20% on hover */
 
       .cardTitle,
       .cardIcon {

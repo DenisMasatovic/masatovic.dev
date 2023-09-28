@@ -74,11 +74,19 @@ export default {
         this.$store.commit("setShowMobileNavigation", value);
       },
     },
+    navMenuEnabled() {
+      return this.$store.getters.navMenuEnabled;
+    },
   },
   methods: {
     redirectToHome() {
       this.$router.push("/");
-      this.$store.commit("setShowMobileNavigation", false);
+      this.navMenuEnabled
+        ? this.$store.commit("setShowMobileNavigation", false)
+        : null;
+      !this.isDesktopSize
+        ? (document.getElementById("burger").checked = false)
+        : null;
     },
   },
 };
