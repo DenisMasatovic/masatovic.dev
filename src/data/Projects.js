@@ -30,6 +30,24 @@ const Projects = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     learnings:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    techStack: [
+      {
+        technology: "Vue 3",
+        logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FvueLogo.png?alt=media",
+      },
+      {
+        technology: "JavaScript",
+        logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FjsLogo.png?alt=media",
+      },
+      {
+        technology: "NodeJS",
+        logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FnodeJSLogo.png?alt=media",
+      },
+      {
+        technology: "Firebase",
+        logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FfirebaseLogo.png?alt=media",
+      },
+    ],
   },
 ];
 

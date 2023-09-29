@@ -27,10 +27,7 @@
         >Mobile</span
       >
     </div>
-    <div
-      class="screenshotCarousel"
-      v-viewer="{ movable: false, toolbar: false, title: false }"
-    >
+    <div class="screenshotCarousel" v-viewer="{ movable: false, title: false }">
       <div
         v-for="(image, index) in screenshotMode === 'DESKTOP'
           ? project.screenshotsDesktop

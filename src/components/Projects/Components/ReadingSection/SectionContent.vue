@@ -1,8 +1,14 @@
 <template>
-  <div :class="'subHeader ' + (isInverted ? 'inverted' : '')">
+  <div
+    ref="firstAnimatedDiv"
+    :class="'subHeader ' + (isInverted ? 'inverted' : '')"
+  >
     {{ sectionName }}
   </div>
-  <div :class="'sectionContent ' + (isInverted ? 'inverted' : '')">
+  <div
+    ref="secondAnimatedDiv"
+    :class="'sectionContent ' + (isInverted ? 'inverted' : '')"
+  >
     <div class="sectionText">{{ project.features }}</div>
     <div class="sectionIcon">
       <img :src="iconPath" />
@@ -12,6 +18,52 @@
 <script>
 export default {
   props: ["sectionName", "project", "iconPath", "isInverted"],
+
+  mounted() {
+    this.observeVisibility();
+  },
+  data() {
+    return {
+      observers: [],
+      animationPlayed: false,
+    };
+  },
+  methods: {
+    observeVisibility() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!this.animationPlayed) {
+            if (entry.isIntersecting && entry) {
+              if (this.isInverted) {
+                this.$refs.firstAnimatedDiv.classList.add("fade-in-right");
+                this.$refs.secondAnimatedDiv.classList.add("fade-in-right");
+                this.animationPlayed = true;
+              } else {
+                this.$refs.firstAnimatedDiv.classList.add("fade-in-left");
+                this.$refs.secondAnimatedDiv.classList.add("fade-in-left");
+                this.animationPlayed = true;
+              }
+            } else {
+              this.$refs.firstAnimatedDiv.classList.remove(
+                "fade-in-left",
+                "fade-in-right"
+              );
+              this.$refs.secondAnimatedDiv.classList.remove(
+                "fade-in-left",
+                "fade-in-right"
+              );
+            }
+          }
+        });
+      });
+      observer.observe(this.$refs.firstAnimatedDiv);
+      observer.observe(this.$refs.secondAnimatedDiv);
+      this.observers.push(observer);
+    },
+  },
+  beforeUnmount() {
+    this.observers.forEach((observer) => observer.disconnect()); // disconnect all observers
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -29,6 +81,7 @@ export default {
   align-items: center;
   text-align: start;
   gap: 2rem;
+
   .sectionText {
     width: 70%;
     font-size: $font-size-lg;

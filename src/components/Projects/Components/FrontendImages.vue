@@ -58,6 +58,13 @@ export default {
   }
 }
 .top-margin {
-  margin-top: 15vw;
+  margin-top: 5vw;
+
+  @media (max-width: $tablet) {
+    margin-top: 10vw;
+  }
+  @media (max-width: $mobile) {
+    margin-top: 15vw;
+  }
 }
 </style>
