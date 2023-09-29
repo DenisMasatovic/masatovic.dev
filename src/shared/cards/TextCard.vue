@@ -1,18 +1,16 @@
 <template>
   <div class="card">
     <div class="cardTitle">{{ cardTitle }}</div>
-    <div class="cardImagesWrapper">
-      <div class="cardImages">
-        <div v-for="(imagePath, index) in cardImagePaths" :key="index">
-          <img :src="imagePath" class="cardImage" />
-        </div>
+    <div class="cardTextWrapper">
+      <div class="cardText">
+        {{ cardText }}
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  props: ["cardTitle", "cardImagePaths"],
+  props: ["cardTitle", "cardText"],
 };
 </script>
 <style scoped lang="scss">
@@ -22,7 +20,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
+  gap: 1rem;
   background-image: linear-gradient(
       155deg,
       rgba(255, 255, 255, 0.4) 1.06%,
@@ -43,27 +41,26 @@ export default {
     &:hover {
       transform: scale(1.05); /* Scale the size of the card by 20% on hover */
 
-      .cardImages{
-        opacity: 1 !important;
-      }
-      .cardTitle,
-      .cardIcon {
+      .cardTitle{
         transition: 0.3s ease;
-        opacity: 1;
+          opacity: 1;
+      }
+      .cardTextWrapper {
+        .cardText {
+          transition: 0.3s ease;
+          opacity: 1;
+        }
       }
     }
   }
   padding: 1.5rem;
-  height: 12vw;
-  width: 38vw;
-
+  width: 45vw;
+  box-sizing: border-box;
   @media (max-width: $tablet) {
-    height: 175px;
     width: 100%;
   }
   @media (max-width: $mobile) {
     padding: 1rem;
-    height: 120px;
   }
   .cardTitle {
     font-size: $font-size-xl;
@@ -73,37 +70,19 @@ export default {
       font-size: $font-size-lg;
     }
   }
-  .cardImagesWrapper {
+  .cardTextWrapper {
     width: 100%;
-    height: 80%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    .cardImages {
-      width: 60%;
-      @media (max-width: $tablet) {
-        width: 70%;
-      }
-      @media (max-width: $mobile) {
-        width: 80%;
-      }
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-end;
+
+    .cardText {
+      text-align: start;
       opacity: 70%;
-
-
-      img.cardImage {
-        height: 80px;
-        object-fit: cover;
-        @media (max-width: $tablet) {
-          width: auto;
-        }
-        @media (max-width: $mobile) {
-          height: 60px;
-
-          width: auto;
-        }
-      }
+      font-size: $font-size-lg;
+      @media (max-width: $mobile) {
+      font-size: $font-size-md;
+    }
     }
   }
 }

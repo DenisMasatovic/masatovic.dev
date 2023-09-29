@@ -24,7 +24,7 @@ export default {
       rgba(255, 255, 255, 0.4) 1.06%,
       rgba(255, 255, 255, 0) 100%
     ),
-    url("https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ffrost.png?alt=media");
+    url("https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Ffrost.png?alt=media");
   //background-size: cover; /* This will scale the image to cover the entire element */
   background-repeat: repeat; /* This will prevent the image from repeating */
   border: 1px solid rgba(183, 183, 183, 0.4);

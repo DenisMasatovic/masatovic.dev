@@ -16,6 +16,11 @@ const routes = [
     name: "Projekte",
     component: () => import("@/components/Projects/ProjectsList.vue"),
   },
+  {
+    path: "/projekte/:id",
+    name: "project-details",
+    component: () => import("@/components/Projects/ProjectDetails.vue"),
+  },
   // other routes...
 ];
 

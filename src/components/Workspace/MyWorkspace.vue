@@ -51,15 +51,15 @@ export default {
   data() {
     return {
       projectIcon:
-        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_code.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_code.png?alt=media",
       techStackIcon:
-        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_layers.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_layers.png?alt=media",
       profileIcon:
-        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_person.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_person.png?alt=media",
       partnersIcon:
-        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_people.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_people.png?alt=media",
       contactIcon:
-        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Ficon_mail.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_mail.png?alt=media",
     };
   },
   methods: {

@@ -5,19 +5,19 @@
   <div v-if="currentRoute === '/'">
     <img
       class="memoji"
-      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Flanding_page_desktop_memoji.png?alt=media"
+      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_desktop_memoji.png?alt=media"
       alt="Denis Masatovic"
       v-if="isDesktopSize"
     />
     <img
       class="memoji"
-      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Flanding_page_tablet_memoji.png?alt=media"
+      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_tablet_memoji.png?alt=media"
       alt="Denis Masatovic"
       v-if="isTabletSize && !isMobileSize"
     />
     <img
       class="memoji"
-      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2Flanding_page_mobile_memoji.png?alt=media"
+      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_mobile_memoji.png?alt=media"
       alt="Denis Masatovic"
       v-if="isMobileSize"
     />
@@ -56,6 +56,10 @@ export default {
 @import "./assets/sass/style.scss";
 body {
   margin: 0;
+}
+html,
+body {
+  background-color: #171717; /* Replace with your color */
 }
 #app {
   min-height: 100vh;

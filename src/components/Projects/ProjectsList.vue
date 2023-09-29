@@ -22,6 +22,7 @@
           <ImageGlasCard
             :cardTitle="project.name"
             :cardImagePaths="project.previewAssets"
+            @click="goToProjectDetails(project)"
           ></ImageGlasCard>
           <ColorBubble
             v-for="i in 3"
@@ -64,6 +65,12 @@ export default {
         const x = (event.clientX - window.innerWidth / 2) / window.innerWidth;
         const y = (event.clientY - window.innerHeight / 2) / window.innerHeight;
         bubble.style.transform = `translate(${x * amount}px, ${y * amount}px)`;
+      });
+    },
+    goToProjectDetails(project) {
+      this.$router.push({
+        name: "project-details",
+        params: { id: project.id },
       });
     },
   },
