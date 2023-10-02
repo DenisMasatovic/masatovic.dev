@@ -8,7 +8,7 @@
     <ProjectScreenshots :project="project"></ProjectScreenshots>
     <ReadingSection :project="project"></ReadingSection>
     <ProjectTechStack :project="project"></ProjectTechStack>
-    <div ref="animatedDiv" class="callToAction">
+    <div class="callToAction">
       <div class="subHeader">Interresiert an ähnlichen Projekten?</div>
       <div class="contactButton">
         <MyButton
@@ -55,29 +55,7 @@ export default {
       const projectId = this.$route.params.id;
       this.project = Projects.find((project) => project.id === projectId);
     },
-    /* observeCTAVisibility() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          entry.style.opacity = 0;
-
-          if (entry.isIntersecting && entry) {
-            if (this.isInverted) {
-              this.$refs.animatedDiv.classList.add("fade-in-bottom");
-            } else {
-              this.$refs.animatedDiv.classList.add("fade-in-bottom");
-            }
-          } else {
-            this.$refs.animatedDiv.classList.remove("fade-in-bottom");
-          }
-        });
-      });
-      observer.observe(this.$refs.animatedDiv);
-      this.observers.push(observer);
-    }, */
   },
- /*  beforeUnmount() {
-    this.observers.forEach((observer) => observer.disconnect()); // disconnect all observers
-  }, */
 };
 </script>
 <style scoped lang="scss">

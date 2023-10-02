@@ -20,7 +20,7 @@ export default {
     return {
       stackObjects: [],
       observers: [],
-      animationPlayed: [], // make this an array to track each element
+      animationPlayed: [], 
     };
   },
   mounted() {

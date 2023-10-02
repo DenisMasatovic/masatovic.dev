@@ -21,6 +21,11 @@ const routes = [
     name: "project-details",
     component: () => import("@/components/Projects/ProjectDetails.vue"),
   },
+  {
+    path: "/techstack",
+    name: "TechStack",
+    component: () => import("@/components/TechStack/TechStack.vue"),
+  },
   // other routes...
 ];
 

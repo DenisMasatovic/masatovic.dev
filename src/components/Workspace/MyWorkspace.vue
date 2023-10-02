@@ -14,7 +14,7 @@
           cardClass="subCard"
           cardTitle="Tech-Stack"
           :cardIconPath="techStackIcon"
-          @click="$router.push('/tech-stack')"
+          @click="$router.push('/techstack')"
         ></IconGlasCard>
         <IconGlasCard
           cardClass="subCard"

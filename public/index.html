@@ -1,18 +1,137 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- frost -->
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Ffrost.png?alt=media"
+      as="image"
+    />
+    <!-- icons -->
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_code.png?alt=media"
+      ,
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_layers.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_person.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_people.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Ficons%2Ficon_mail.png?alt=media"
+      as="image"
+    />
+    <!-- memoji -->
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_desktop_memoji.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_tablet_memoji.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_mobile_memoji.png?alt=media"
+      as="image"
+    />
+    <!-- tech logos -->
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FvueLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FjsLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FnodeJSLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FfirebaseLogo.png?alt=media"
+      as="image"
+    />
+
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FangularLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FflutterLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FpostgresSQLLogoLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FspringLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FredisLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FmongoDBLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FmySQLLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FelectronLogo.png?alt=media"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FtsLogo.png?alt=media"
+      as="image"
+    />
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-
 </html>

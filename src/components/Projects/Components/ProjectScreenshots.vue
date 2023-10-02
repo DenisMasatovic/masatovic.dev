@@ -5,33 +5,39 @@
       <span
         :class="
           'screenshotModeOption ' +
-          (screenshotMode === 'DESKTOP' ? 'selectedScreenshotMode' : '')
+          (screenshotMode === allScreenshotModes.DESKTOP
+            ? 'selectedScreenshotMode'
+            : '')
         "
-        @click="screenshotMode = 'DESKTOP'"
+        @click="screenshotMode = allScreenshotModes.DESKTOP"
         >Desktop</span
       >
       <span
         :class="
           'screenshotModeOption ' +
-          (screenshotMode === 'TABLET' ? 'selectedScreenshotMode' : '')
+          (screenshotMode === allScreenshotModes.TABLET
+            ? 'selectedScreenshotMode'
+            : '')
         "
-        @click="screenshotMode = 'TABLET'"
+        @click="screenshotMode = allScreenshotModes.TABLET"
         >Tablet</span
       >
       <span
         :class="
           'screenshotModeOption ' +
-          (screenshotMode === 'MOBILE' ? 'selectedScreenshotMode' : '')
+          (screenshotMode === allScreenshotModes.MOBILE
+            ? 'selectedScreenshotMode'
+            : '')
         "
-        @click="screenshotMode = 'MOBILE'"
+        @click="screenshotMode = allScreenshotModes.MOBILE"
         >Mobile</span
       >
     </div>
     <div class="screenshotCarousel" v-viewer="{ movable: false, title: false }">
       <div
-        v-for="(image, index) in screenshotMode === 'DESKTOP'
+        v-for="(image, index) in screenshotMode === allScreenshotModes.DESKTOP
           ? project.screenshotsDesktop
-          : screenshotMode === 'TABLET'
+          : screenshotMode === allScreenshotModes.TABLET
           ? project.screenshotsTablet
           : project.screenshotsMobile"
         :key="index"
@@ -42,11 +48,13 @@
   </div>
 </template>
 <script>
+import ScreenshotMode from "@/Types/ScreenshotMode.js";
 export default {
   props: ["project"],
   data() {
     return {
-      screenshotMode: "DESKTOP",
+      allScreenshotModes: ScreenshotMode,
+      screenshotMode: ScreenshotMode.DESKTOP,
     };
   },
 };
