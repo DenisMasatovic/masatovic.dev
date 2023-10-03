@@ -1,26 +1,32 @@
 <template>
   <div class="heroSection">
-    <div class="threedmodel">
+    <div class="threedmodel fade-in-bottom">
       <ThreeDDesktop v-if="isDesktopSize"></ThreeDDesktop>
       <ThreeDTablet v-if="isTabletSize && !isMobileSize"></ThreeDTablet>
       <ThreeDMobile v-if="isMobileSize"></ThreeDMobile>
     </div>
     <div class="slogan">
-      <span>Entwicklung aus Leidenschaft.</span>
+      <VueWriter
+        :array="['Entwicklung aus Leidenschaft.']"
+        :iterations="1"
+        :typeSpeed="30"
+      >
+      </VueWriter>
     </div>
-    
   </div>
 </template>
 <script>
 import ThreeDDesktop from "./3DHeroSection/3DDesktop.vue";
 import ThreeDTablet from "./3DHeroSection/3DTablet.vue";
 import ThreeDMobile from "./3DHeroSection/3DMobile.vue";
+import VueWriter from "vue-writer";
 
 export default {
   components: {
     ThreeDDesktop,
     ThreeDTablet,
     ThreeDMobile,
+    VueWriter,
   },
   computed: {
     isDesktopSize() {
@@ -47,7 +53,7 @@ export default {
     position: relative;
     overflow: hidden;
   }
- 
+
   .threedmodel {
     position: absolute;
     top: 25%;
@@ -73,8 +79,7 @@ export default {
       width: 100%;
       justify-content: center;
     }
-
-    span {
+    .is-typed {
       margin-top: 10%;
       font-size: $font-size-xxl;
       font-weight: bold;
@@ -92,6 +97,5 @@ export default {
       }
     }
   }
-  
 }
 </style>

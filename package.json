@@ -16,6 +16,7 @@
     "viewerjs": "^1.11.6",
     "vue": "^3.2.13",
     "vue-router": "^4.2.5",
+    "vue-writer": "^1.2.0",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
