@@ -28,6 +28,7 @@ export default {
   display: flex;
   padding: 2rem 5rem;
   justify-content: space-between;
+  overflow: hidden;
   @media (max-width: $tablet) {
     flex-direction: column;
     padding: 2rem 7rem;
