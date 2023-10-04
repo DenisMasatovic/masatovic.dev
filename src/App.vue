@@ -5,19 +5,19 @@
   <div v-if="currentRoute === '/'">
     <img
       class="memoji fade-in-bottom"
-      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_desktop_memoji.png?alt=media"
+      :src="desktopMemojiUrl"
       alt="Denis Masatovic"
       v-if="isDesktopSize"
     />
     <img
       class="memoji fade-in-bottom"
-      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_tablet_memoji.png?alt=media"
+      :src="tabletMemojiUrl"
       alt="Denis Masatovic"
       v-if="isTabletSize && !isMobileSize"
     />
     <img
       class="memoji fade-in-bottom"
-      src="https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_mobile_memoji.png?alt=media"
+      :src="mobileMemojiUrl"
       alt="Denis Masatovic"
       v-if="isMobileSize"
     />
@@ -47,6 +47,15 @@ export default {
     },
     currentRoute() {
       return this.$router.currentRoute.value.path;
+    },
+    desktopMemojiUrl() {
+      return "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_desktop_memoji.png?alt=media";
+    },
+    tabletMemojiUrl() {
+      return "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_tablet_memoji.png?alt=media";
+    },
+    mobileMemojiUrl() {
+      return "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Flanding_page_mobile_memoji.png?alt=media";
     },
   },
 };

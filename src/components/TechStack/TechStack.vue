@@ -26,7 +26,7 @@
       :index="2"
     ></AvailableStack>
     <div class="callToAction">
-      <div class="subHeader">Interresiert an ähnlichen Projekten?</div>
+      <div class="subHeader">Interresiere geweckt?</div>
       <div class="contactButton">
         <MyButton
           buttonClass="secondary"

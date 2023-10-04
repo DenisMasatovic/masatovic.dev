@@ -26,6 +26,11 @@ const routes = [
     name: "TechStack",
     component: () => import("@/components/TechStack/TechStack.vue"),
   },
+  {
+    path: "/profil",
+    name: "Profil",
+    component: () => import("@/components/Profile/ProfileWrapper.vue"),
+  },
   // other routes...
 ];
 

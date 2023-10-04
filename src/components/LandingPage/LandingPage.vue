@@ -8,8 +8,7 @@
     <div class="slogan">
       <VueWriter
         :array="['Entwicklung aus Leidenschaft.']"
-        :iterations="1"
-        :typeSpeed="30"
+        :typeSpeed="40"
       >
       </VueWriter>
     </div>
@@ -67,7 +66,7 @@ export default {
     }
   }
   .slogan {
-    width: 90%;
+    width: 80%;
     display: flex;
     justify-content: flex-end;
 
@@ -83,17 +82,18 @@ export default {
       margin-top: 10%;
       font-size: $font-size-xxl;
       font-weight: bold;
-      width: 35%;
+      width: 25%;
       text-align: start;
 
       @media (max-width: $tablet) {
-        width: 50%;
+        width: 35%;
         text-align: center;
       }
       @media (max-width: $mobile) {
-        width: 80%;
+        width: 45%;
         text-align: end;
         font-size: $font-size-lg;
+        margin-left: 5rem;
       }
     }
   }
