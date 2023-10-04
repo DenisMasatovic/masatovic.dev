@@ -226,6 +226,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: $mobile) {
+    justify-content: flex-end;
+  }
 }
 .portfolioTitle {
   font-size: $font-size-xxxl;

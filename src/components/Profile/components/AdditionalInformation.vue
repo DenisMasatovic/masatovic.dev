@@ -107,6 +107,9 @@ export default {
     .text {
       font-size: $font-size-lg;
       text-align: start;
+      @media (max-width: $mobile) {
+        font-size: $font-size-md;
+      }
     }
   }
 }
