@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="profileImage">
-      <img :src="profileImageUrl"/>
+      <img :src="profileImageUrl" />
     </div>
     <div class="information">
       <div class="paragraphBold">Denis Masatovic, {{ age }}</div>
@@ -76,7 +76,7 @@ export default {
     }
   }
   padding: 2rem;
-  height: 70vh;
+  height: calc(70vh + 2rem);
   width: 100%;
   @media (max-width: $tablet) {
     height: calc(50vh + 2rem);

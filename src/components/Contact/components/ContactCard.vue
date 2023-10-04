@@ -160,7 +160,7 @@ export default {
   }
   @media (max-width: $mobile) {
     padding: 1.5rem;
-    height: calc(55vh + 2rem);
+    height: calc(55vh + 3rem);
   }
 
   form {
