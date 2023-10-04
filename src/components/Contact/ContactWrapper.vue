@@ -1,60 +1,72 @@
 <template>
-  <div class="profileWrapper">
-    <div class="profileCardWrapper">
-      <ProfileCard class="profileCard"></ProfileCard>
+  <div class="contactWrapper">
+    <div class="quoteWrapper fade-in-bottom">
+      <MotivationQuote></MotivationQuote>
+    </div>
+    <div class="contactCardWrapper">
+      <ContactCard></ContactCard>
       <ColorBubble v-for="i in 3" :key="i" :class="'bubble' + i"></ColorBubble>
     </div>
-    <AdditionalInformation
-      class="additionalInformation"
-    ></AdditionalInformation>
   </div>
 </template>
 <script>
-import ProfileCard from "./components/ProfileCard.vue";
-import AdditionalInformation from "./components/AdditionalInformation.vue";
+import ContactCard from "./components/ContactCard.vue";
+import MotivationQuote from "./components/MotivationQuote.vue";
 import ColorBubble from "@/shared/ColorBubble.vue";
 export default {
   components: {
-    ProfileCard,
-    AdditionalInformation,
+    MotivationQuote,
+    ContactCard,
     ColorBubble,
   },
 };
 </script>
 <style scoped lang="scss">
 @import "../../assets/sass/style.scss";
-
-.profileWrapper {
+.contactWrapper {
   display: flex;
-  padding: 2rem 5rem;
   justify-content: space-between;
+  padding: 2rem 5rem;
   overflow: hidden;
   @media (max-width: $tablet) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 2rem 7rem;
+  align-items: center;
+
   }
   @media (max-width: $mobile) {
     padding: 1rem 1.5rem;
   }
-  .profileCardWrapper {
-    position: relative;
+  .quoteWrapper {
     width: 45%;
+    margin-top: 15rem;
+    min-height: 20vh;
     @media (max-width: $tablet) {
       width: 100%;
+      margin-top: 5rem;
     }
-    .profileCard {
-      box-sizing: border-box;
+    @media (max-width: $mobile) {
+      margin-top: 2rem;
+    }
+  }
+  .contactCardWrapper {
+    width: 40%;
+    position: relative;
+    max-width: 500px;
+
+    @media (max-width: $tablet) {
+      width: 100%;
     }
     .bubble1 {
       width: 13rem;
       height: 13rem;
       top: -5%;
-      left: -15%;
+      right: -10%;
       @media (max-width: $tablet) {
         width: 11rem;
         height: 11rem;
-        top: -10%;
-        left: -10%;
+        top: -5%;
+        right: -10%;
       }
       @media (max-width: $mobile) {
         width: 9rem;
@@ -66,11 +78,11 @@ export default {
       width: 9rem;
       height: 9rem;
       top: 30%;
-      right: -15%;
+      left: -10%;
       @media (max-width: $tablet) {
         width: 8rem;
         height: 8rem;
-        right: -10%;
+        left: -10%;
       }
       @media (max-width: $mobile) {
         width: 7rem;
@@ -81,7 +93,7 @@ export default {
       width: 8rem;
       height: 8rem;
       bottom: -5%;
-      left: -10%;
+      right: -10%;
       @media (max-width: $tablet) {
         width: 7rem;
         height: 7rem;
@@ -90,17 +102,6 @@ export default {
         width: 5rem;
         height: 5rem;
       }
-    }
-  }
-  .additionalInformation {
-    width: 45%;
-    @media (max-width: $tablet) {
-      margin-top: 4rem;
-      width: 100%;
-    }
-    @media (max-width: $mobile) {
-      margin-top: 2rem;
-      width: 100%;
     }
   }
 }

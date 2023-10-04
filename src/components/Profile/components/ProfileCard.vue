@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="profileImage">
-      <img :src="profileImageUrl" alt="" />
+      <img :src="profileImageUrl"/>
     </div>
     <div class="information">
       <div class="paragraphBold">Denis Masatovic, {{ age }}</div>
@@ -13,7 +13,6 @@
 </template>
 <script>
 export default {
-  props: ["cardTitle", "cardImagePaths"],
   data() {
     return {
       birthday: new Date(2001, 5, 8), // Note: Month is zero-based, so June is 5.
@@ -74,15 +73,6 @@ export default {
   @media (min-width: $tablet) {
     &:hover {
       transform: scale(1.05); /* Scale the size of the card by 20% on hover */
-
-      .cardImages {
-        opacity: 1 !important;
-      }
-      .cardTitle,
-      .cardIcon {
-        transition: 0.3s ease;
-        opacity: 1;
-      }
     }
   }
   padding: 2rem;

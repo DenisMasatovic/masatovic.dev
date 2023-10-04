@@ -50,7 +50,17 @@ button {
     color: white;
     font-weight: bold;
   }
+
+  &:disabled {
+    &:hover {
+      background-color: white;
+      border: 2px solid white;
+      color: black;
+      font-weight: normal;
+    }
+  }
 }
+
 .staticPrimary {
   color: white;
   background-color: $masatovic-purple;

@@ -31,6 +31,11 @@ const routes = [
     name: "Profil",
     component: () => import("@/components/Profile/ProfileWrapper.vue"),
   },
+  {
+    path: "/kontakt",
+    name: "Kontakt",
+    component: () => import("@/components/Contact/ContactWrapper.vue"),
+  },
   // other routes...
 ];
 
