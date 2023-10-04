@@ -7,7 +7,7 @@
     </div>
     <div class="slogan">
       <VueWriter
-        :array="['Entwicklung aus Leidenschaft.']"
+        :array="['{ Entwicklung aus Leidenschaft. }']"
         :typeSpeed="40"
       >
       </VueWriter>

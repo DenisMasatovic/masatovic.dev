@@ -36,6 +36,11 @@ const routes = [
     name: "Kontakt",
     component: () => import("@/components/Contact/ContactWrapper.vue"),
   },
+  {
+    path: "/partner",
+    name: "Partner",
+    component: () => import("@/components/Partners/PartnersWrapper.vue"),
+  },
   // other routes...
 ];
 

@@ -39,7 +39,7 @@ export default {
   }
   .quoteWrapper {
     width: 45%;
-    margin-top: 15rem;
+    margin-top: 10rem;
     min-height: 20vh;
     @media (max-width: $tablet) {
       width: 100%;

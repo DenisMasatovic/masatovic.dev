@@ -34,8 +34,13 @@
 </template>
 
 <script>
+import FrontendStack from "@/data/FrontendStack";
+import BackendStack from "@/data/BackendStack";
+import DatabaseStack from "@/data/DatabaseStack";
+
 import ColorBubble from "@/shared/ColorBubble.vue";
 import StackType from "@/Types/StackType.js";
+
 export default {
   props: ["text", "type", "assets", "index"],
   components: {
@@ -72,68 +77,9 @@ export default {
       observers: [],
       animationPlayed: [],
       stackType: StackType,
-      frontendStack: [
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FvueLogo.png?alt=media",
-          technology: "Vue 3",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FangularLogo.png?alt=media",
-          technology: "Angular",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FelectronLogo.png?alt=media",
-          technology: "Electron",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FflutterLogo.png?alt=media",
-          technology: "Flutter",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FjsLogo.png?alt=media",
-          technology: "JavaScript",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FtsLogo.png?alt=media",
-          technology: "TypeScript",
-        },
-      ],
-      backendStack: [
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FnodeJSLogo.png?alt=media",
-          technology: "NodeJS",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FredisLogo.png?alt=media",
-          technology: "Redis",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FspringLogo.png?alt=media",
-          technology: "Java Spring",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FpythonLogo.png?alt=media",
-          technology: "Python",
-        },
-      ],
-      databaseStack: [
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FfirebaseLogo.png?alt=media",
-          technology: "Firebase",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FmongoDBLogo.png?alt=media",
-          technology: "MongoDB",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FmySQLLogo.png?alt=media",
-          technology: "MySQL",
-        },
-        {
-          logo: "https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2FtechLogos%2FpostgresSQLLogo.png?alt=media",
-          technology: "PostgresSQL",
-        },
-      ],
+      frontendStack: FrontendStack,
+      backendStack: BackendStack,
+      databaseStack: DatabaseStack,
     };
   },
 
