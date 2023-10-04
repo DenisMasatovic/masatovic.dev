@@ -89,13 +89,13 @@ export default {
   height: 70vh;
   width: 100%;
   @media (max-width: $tablet) {
-    height: calc(45vh + 2rem);
+    height: calc(50vh + 2rem);
 
     width: 100%;
   }
   @media (max-width: $mobile) {
     padding: 1rem;
-    height: calc(50vh + 2rem);
+    height: calc(55vh + 2rem);
   }
   .profileImage {
     margin-top: 2rem;
