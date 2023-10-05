@@ -64,6 +64,15 @@ export default {
   }
 
   .partnerMemoji {
+    display: flex;
+    align-items: center;
+    @media (max-width: $mobile) {
+      height: 100%;
+
+      img {
+        height: 10vh;
+      }
+    }
   }
 
   .partnerInformation {
@@ -78,14 +87,26 @@ export default {
     }
 
     .partnerLink {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      @media (max-width: $mobile) {
+        font-size: $font-size-md;
+      }
       .partnerCompany {
         color: white;
       }
-      img{
+      img {
         height: 2vh;
+        @media (max-width: $mobile) {
+          height: 1.5vh;
+        }
+      }
+    }
+
+    .partnerProfession {
+      @media (max-width: $mobile) {
+        font-size: $font-size-md;
       }
     }
   }

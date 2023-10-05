@@ -94,7 +94,7 @@ export default {
   }
   .headLine {
     @media (max-width: $mobile) {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
     }
     div {
       font-size: $font-size-xxl;
@@ -112,6 +112,10 @@ export default {
     text-align: start;
 
     font-size: $font-size-xl;
+    @media (max-width: $mobile) {
+      margin-top: 0;
+      font-size: $font-size-md;
+    }
   }
   .partners {
     display: grid;
