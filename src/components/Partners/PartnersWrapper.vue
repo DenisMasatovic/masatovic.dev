@@ -11,6 +11,7 @@
         v-for="(partner, index) in partners"
         :key="index"
         :style="`--animation-delay: ${index * 0.1}s`"
+        :ref="(el) => (partnerObjects[index] = el)"
       >
         <div
           :class="
@@ -53,6 +54,9 @@ export default {
   data() {
     return {
       partners: Partners,
+      partnerObjects: [],
+      observers: [],
+      animationPlayed: [],
     };
   },
 
@@ -72,6 +76,33 @@ export default {
         params: { id: project.id },
       });
     },
+    observeVisibility() {
+      this.partnerObjects.forEach((stackObject, index) => {
+        stackObject.style.opacity = 0;
+        this.animationPlayed[index] = false; // initialize each flag to false
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!this.animationPlayed[index]) {
+              // check the flag for the current element
+              if (entry.isIntersecting) {
+                stackObject.classList.add("fade-in-bottom");
+                stackObject.style.animationDelay = `${index * 0.1}s`;
+                this.animationPlayed[index] = true; // set the flag for the current element to true
+              } else {
+                stackObject.classList.remove("fade-in-bottom");
+                stackObject.style.animationDelay = "0s";
+              }
+            }
+          });
+        });
+        observer.observe(stackObject);
+        this.observers.push(observer);
+      });
+    },
+  },
+
+  beforeUnmount() {
+    this.observers.forEach((observer) => observer.disconnect());
   },
 };
 </script>
