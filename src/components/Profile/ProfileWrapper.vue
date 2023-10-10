@@ -29,12 +29,16 @@ export default {
   padding: 2rem 5rem;
   justify-content: space-between;
   overflow: hidden;
+  @media (min-width: $big-desktop) {
+    padding: 2rem 20rem;
+  }
   @media (max-width: $tablet) {
     flex-direction: column;
     padding: 2rem 7rem;
   }
   @media (max-width: $mobile) {
     padding: 1rem 1.5rem;
+    padding-bottom: 8rem;
   }
   .profileCardWrapper {
     position: relative;
@@ -48,18 +52,21 @@ export default {
     .bubble1 {
       width: 13rem;
       height: 13rem;
-      top: -5%;
+      top: -3%;
       left: -15%;
+      @media (min-width: $big-desktop) {
+        left: -10%;
+      }
       @media (max-width: $tablet) {
         width: 11rem;
         height: 11rem;
-        top: -10%;
+        top: -3%;
         left: -10%;
       }
       @media (max-width: $mobile) {
         width: 9rem;
         height: 9rem;
-        top: -3%;
+        top: -1%;
       }
     }
     .bubble2 {
@@ -67,6 +74,9 @@ export default {
       height: 9rem;
       top: 30%;
       right: -15%;
+      @media (min-width: $big-desktop) {
+        right: 10%;
+      }
       @media (max-width: $tablet) {
         width: 8rem;
         height: 8rem;
@@ -82,6 +92,10 @@ export default {
       height: 8rem;
       bottom: -5%;
       left: -10%;
+      @media (min-width: $big-desktop) {
+        left: -5%;
+        bottom: -2%;
+      }
       @media (max-width: $tablet) {
         width: 7rem;
         height: 7rem;

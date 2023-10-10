@@ -89,6 +89,9 @@ body {
   position: absolute;
   bottom: 0;
   right: 0%;
+  @media (min-width: $big-desktop) {
+    right: 15%;
+  }
 
   @media (max-width: $mobile) {
     left: 0;

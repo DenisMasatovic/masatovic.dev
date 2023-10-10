@@ -5,6 +5,7 @@
         v-for="(image, index) in project.detailAssets"
         :key="index"
         :style="`--animation-delay: ${index * 0.1}s`"
+        class="frontendImageWrapper"
       >
         <img
           :src="image"
@@ -40,12 +41,26 @@ export default {
   .frontendImages {
     display: flex;
     justify-content: space-around;
-    gap: 2rem;
     @media (max-width: $mobile) {
       gap: 0rem;
     }
+    .frontendImageWrapper {
+      min-width: 15vw;
+      @media (min-width: $big-desktop) {
+        min-width: 10vw;
+      }
+      @media (max-width: $tablet) {
+        min-width: 20vw;
+      }
+      @media (max-width: $mobile) {
+        min-width: 25vw;
+      }
+    }
     img {
       height: 12vw;
+      @media (min-width: $big-desktop) {
+        height: 8vw;
+      }
       @media (max-width: $tablet) {
         height: 20vw;
       }

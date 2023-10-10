@@ -6,11 +6,8 @@
       <ThreeDMobile v-if="isMobileSize"></ThreeDMobile>
     </div>
     <div class="slogan">
-      <VueWriter
-        :array="['{ Entwicklung aus Leidenschaft. }']"
-        :typeSpeed="40"
-      >
-      </VueWriter>
+      <span class="staticText">{ Entwicklung </span>
+      <VueWriter :array="['aus Leidenschaft. }']" :typeSpeed="50"> </VueWriter>
     </div>
   </div>
 </template>
@@ -65,36 +62,55 @@ export default {
       justify-content: center;
     }
   }
-  .slogan {
-    width: 80%;
-    display: flex;
-    justify-content: flex-end;
 
+  .slogan {
+    width: 35%;
+    display: flex;
+    flex-direction: column; // Changed to column to stack text vertically
+    justify-content: flex-end;
+    align-items: flex-start; // Aligns text to the left
+    position: absolute;
+    right: 10%;
+    top: 25%;
     @media (max-width: $tablet) {
+      position: unset;
+      height: 25%;
       width: 100%;
       justify-content: center;
+      align-items: center; // Center aligns text on smaller screens
     }
+
     @media (max-width: $mobile) {
       width: 100%;
       justify-content: center;
+      align-items: center; // Center aligns text on mobile
     }
+
+    .static-text-container,
+    .typed-text-container {
+      width: 100%; // Takes full width of the parent container
+    }
+
+    span,
     .is-typed {
-      margin-top: 10%;
+      margin-top: 1rem;
       font-size: $font-size-xxl;
       font-weight: bold;
-      width: 25%;
       text-align: start;
+      width: auto;
 
       @media (max-width: $tablet) {
-        width: 35%;
         text-align: center;
       }
+
       @media (max-width: $mobile) {
-        width: 45%;
         text-align: end;
         font-size: $font-size-lg;
-        margin-left: 5rem;
       }
+    }
+
+    .typed-text-container {
+      margin-top: 1rem; // Adds space above the typed text
     }
   }
 }

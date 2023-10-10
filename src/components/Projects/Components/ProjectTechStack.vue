@@ -84,6 +84,7 @@ export default {
     gap: 2rem;
     img {
       height: 10vw;
+      max-height: 200px;
       @media (max-width: $tablet) {
         height: 12vw;
         object-fit: contain;

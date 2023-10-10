@@ -63,6 +63,9 @@ export default {
 
 .projectDetailsWrapper {
   padding: 0rem 5rem 4rem;
+  @media (min-width: $big-desktop) {
+    padding: 0rem 20rem 4rem;
+  }
   display: flex;
   flex-direction: column;
   gap: 5rem;

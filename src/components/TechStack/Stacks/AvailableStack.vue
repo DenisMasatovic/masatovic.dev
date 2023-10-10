@@ -279,8 +279,9 @@ export default {
       object-fit: contain;
       img {
         height: 10vw;
+        max-height: 200px;
         @media (max-width: $tablet) {
-          height: 12vw;
+          height: 9vw;
           object-fit: contain;
         }
         @media (max-width: $mobile) {

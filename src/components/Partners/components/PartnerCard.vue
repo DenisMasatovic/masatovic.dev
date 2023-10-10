@@ -56,18 +56,23 @@ export default {
   padding: 1.5rem;
   width: 40vw;
   box-sizing: border-box;
+  min-height: calc(180px + 1.5rem);
+  max-width: 900px;
   @media (max-width: $tablet) {
     width: 100%;
   }
   @media (max-width: $mobile) {
     padding: 1rem;
+    min-height: calc(15vh + 1rem);
   }
 
   .partnerMemoji {
     display: flex;
     align-items: center;
+    min-width: 180px;
     @media (max-width: $mobile) {
       height: 100%;
+      min-width: 10vh;
 
       img {
         height: 10vh;
@@ -82,6 +87,7 @@ export default {
     text-align: start;
     justify-content: center;
     gap: 1rem;
+
     .partnerName {
       font-weight: bold;
     }

@@ -1,22 +1,47 @@
 <template>
-  <div class="bubble fade-in-bottom" :style="bubbleStyle"></div>
+  <div :class="bubbleClasses" :style="bubbleStyle"></div>
 </template>
+
 <script>
 export default {
   props: ["color"],
+  data() {
+    return {
+      isFading: true,
+      floatDuration: "3s",
+    };
+  },
   computed: {
+    bubbleClasses() {
+      return {
+        bubble: true,
+        "fade-in-bottom": this.isFading,
+        float: !this.isFading,
+      };
+    },
     bubbleStyle() {
-      // If color prop is provided, use it for the linear gradient, else use the default color
       const color = this.color || "#651efe";
       return {
         background: `linear-gradient(40deg, ${color} 11.48%, rgba(137, 207, 240, 0) 94.23%)`,
+        animationDuration: !this.isFading ? this.floatDuration : undefined,
       };
     },
   },
+  created() {
+    // Generating random duration for float animation
+    this.floatDuration = (Math.random() * 2 + 2).toFixed(2) + 's'; // Between 2s and 4s
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isFading = false;
+    }, 600);
+  },
 };
 </script>
+
 <style scoped lang="scss">
 @import "../assets/sass/style.scss";
+
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -29,10 +54,12 @@ export default {
   }
 }
 
-
 .bubble {
   position: absolute;
   border-radius: 360px;
-  animation: float 3s ease-in-out infinite;
+}
+
+.float {
+  animation: float ease-in-out infinite;
 }
 </style>

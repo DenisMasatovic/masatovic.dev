@@ -22,6 +22,9 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  @media (min-width: $big-desktop) {
+    justify-content: flex-start;
+  }
   .quote {
     font-size: $font-size-xl;
     font-weight: bold;
@@ -34,8 +37,11 @@ export default {
   .memojiHead {
     position: absolute;
     right: 0%;
+    @media (min-width: $big-desktop) {
+      right: 15%;
+    }
     @media (max-width: $mobile) {
-    right: -20%;
+      right: -20%;
       top: -100%;
       img {
         transform: scale(0.5);

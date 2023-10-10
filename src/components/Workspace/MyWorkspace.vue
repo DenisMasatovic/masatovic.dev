@@ -66,7 +66,6 @@ export default {
     moveBubble(event) {
       const bubbles = document.querySelectorAll(".bubble");
       bubbles.forEach((bubble) => {
-
         const amount = bubble.getBoundingClientRect().width / 15;
         const x = (event.clientX - window.innerWidth / 2) / window.innerWidth;
         const y = (event.clientY - window.innerHeight / 2) / window.innerHeight;
@@ -88,8 +87,12 @@ export default {
   }
 }
 .workspace {
-  height: 85vh;
+  height: 80vh;
   padding: 2rem 5rem;
+
+  @media (min-width: $big-desktop) {
+    padding: 2rem 20rem;
+  }
   box-sizing: border-box;
   @media (max-width: $tablet) {
     position: relative;
@@ -103,8 +106,13 @@ export default {
   }
 
   .cards {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjust this value to your preference */
+    grid-gap: 5rem; /* This sets the horizontal and vertical gaps between grid items */
+    height: 100%;
+    @media (min-width: $big-desktop) {
+      height: 90%;
+    }
     @media (max-width: $tablet) {
       flex-direction: column; // center the items vertically
       gap: 2rem;
@@ -128,7 +136,9 @@ export default {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 5rem;
-      align-content: space-between;
+      align-content: stretch;
+      row-gap: 5rem;
+      justify-items: flex-end;
       @media (max-width: $tablet) {
         justify-items: center;
         padding: 1.5rem; // center the items horizontally
@@ -158,6 +168,10 @@ export default {
     height: 15rem;
     top: 5%;
     left: 1%;
+    @media (min-width: $big-desktop) {
+      left: 10%;
+      top: 10%;
+    }
     @media (max-width: $tablet) {
       width: 15rem;
       height: 15rem;
@@ -175,6 +189,9 @@ export default {
     height: 12rem;
     top: 25%;
     left: 25%;
+    @media (min-width: $big-desktop) {
+      left: 32%;
+    }
     @media (max-width: $tablet) {
       width: 8rem;
       height: 8rem;
@@ -196,6 +213,9 @@ export default {
     height: 10rem;
     bottom: 5%;
     left: 3%;
+    @media (min-width: $big-desktop) {
+      left: 10%;
+    }
     @media (max-width: $tablet) {
       width: 10rem;
       height: 10rem;
@@ -216,6 +236,9 @@ export default {
     height: 13rem;
     top: 50%;
     left: 40%;
+    @media (min-width: $big-desktop) {
+      left: 38%;
+    }
     @media (max-width: $tablet) {
       width: 11rem;
       height: 11rem;
@@ -253,6 +276,9 @@ export default {
     height: 12rem;
     bottom: 5%;
     left: 70%;
+    @media (min-width: $big-desktop) {
+      left: 63%;
+    }
     @media (max-width: $tablet) {
       width: 10rem;
       height: 10rem;
@@ -271,6 +297,9 @@ export default {
     height: 13rem;
     top: 15%;
     right: 5%;
+    @media (min-width: $big-desktop) {
+      right: 10%;
+    }
     @media (max-width: $tablet) {
       width: 6rem;
       height: 6rem;

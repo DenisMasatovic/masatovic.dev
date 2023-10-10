@@ -27,12 +27,14 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 2rem 5rem;
+  @media (min-width: $big-desktop) {
+    padding: 2rem 30rem;
+  }
   overflow: hidden;
   @media (max-width: $tablet) {
     flex-direction: column-reverse;
     padding: 2rem 7rem;
-  align-items: center;
-
+    align-items: center;
   }
   @media (max-width: $mobile) {
     padding: 1rem 1.5rem;
@@ -53,7 +55,9 @@ export default {
     width: 40%;
     position: relative;
     max-width: 500px;
-
+    @media (min-width: $big-desktop) {
+      max-width: 700px;
+    }
     @media (max-width: $tablet) {
       width: 100%;
     }
@@ -71,7 +75,7 @@ export default {
       @media (max-width: $mobile) {
         width: 9rem;
         height: 9rem;
-        top: -3%;
+        top: -1%;
       }
     }
     .bubble2 {

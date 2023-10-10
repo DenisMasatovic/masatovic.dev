@@ -11,7 +11,6 @@
         v-for="(partner, index) in partners"
         :key="index"
         :style="`--animation-delay: ${index * 0.1}s`"
-        :ref="(el) => (partnerObjects[index] = el)"
       >
         <div
           :class="
@@ -54,9 +53,6 @@ export default {
   data() {
     return {
       partners: Partners,
-      partnerObjects: [],
-      observers: [],
-      animationPlayed: [],
     };
   },
 
@@ -76,33 +72,6 @@ export default {
         params: { id: project.id },
       });
     },
-    observeVisibility() {
-      this.partnerObjects.forEach((stackObject, index) => {
-        stackObject.style.opacity = 0;
-        this.animationPlayed[index] = false; // initialize each flag to false
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (!this.animationPlayed[index]) {
-              // check the flag for the current element
-              if (entry.isIntersecting) {
-                stackObject.classList.add("fade-in-bottom");
-                stackObject.style.animationDelay = `${index * 0.1}s`;
-                this.animationPlayed[index] = true; // set the flag for the current element to true
-              } else {
-                stackObject.classList.remove("fade-in-bottom");
-                stackObject.style.animationDelay = "0s";
-              }
-            }
-          });
-        });
-        observer.observe(stackObject);
-        this.observers.push(observer);
-      });
-    },
-  },
-
-  beforeUnmount() {
-    this.observers.forEach((observer) => observer.disconnect());
   },
 };
 </script>
@@ -120,6 +89,12 @@ export default {
 .partnersWrapper {
   padding: 0rem 5rem 4rem;
 
+  @media (min-width: $big-desktop) {
+    padding: 0rem 20rem 4rem;
+  }
+  @media (max-width: $tablet) {
+    padding: 0rem 7rem 4rem;
+  }
   @media (max-width: $mobile) {
     padding: 5% 1.5rem 8rem;
   }
@@ -184,7 +159,7 @@ export default {
         width: 5.5rem;
         height: 5.5rem;
         top: 22%;
-        left: -15%;
+        left: -7%;
       }
     }
     .bubble2 {
@@ -281,5 +256,8 @@ export default {
   display: flex;
 
   justify-content: center;
+}
+.scale-animation {
+  animation: scaleAnimation 0.5s ease-out;
 }
 </style>

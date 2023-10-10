@@ -52,6 +52,7 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  max-width: 700px;
   @media (max-width: $mobile) {
     gap: 2rem;
   }

@@ -8,7 +8,6 @@
         v-for="(project, index) in projects"
         :key="index"
         :style="`--animation-delay: ${index * 0.1}s`"
-        :ref="(el) => (projectObjects[index] = el)"
       >
         <div
           :class="
@@ -55,16 +54,9 @@ export default {
   data() {
     return {
       projects: Projects,
-      projectObjects: [],
-      observers: [],
-      animationPlayed: [],
     };
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.observeVisibility();
-    });
-  },
+
   methods: {
     moveBubble(event) {
       const bubbles = document.querySelectorAll('[class^="bubble"]');
@@ -81,32 +73,6 @@ export default {
         params: { id: project.id },
       });
     },
-    observeVisibility() {
-      this.projectObjects.forEach((stackObject, index) => {
-        stackObject.style.opacity = 0;
-        this.animationPlayed[index] = false; // initialize each flag to false
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (!this.animationPlayed[index]) {
-              // check the flag for the current element
-              if (entry.isIntersecting) {
-                stackObject.classList.add("fade-in-bottom");
-                stackObject.style.animationDelay = `${index * 0.1}s`;
-                this.animationPlayed[index] = true; // set the flag for the current element to true
-              } else {
-                stackObject.classList.remove("fade-in-bottom");
-                stackObject.style.animationDelay = "0s";
-              }
-            }
-          });
-        });
-        observer.observe(stackObject);
-        this.observers.push(observer);
-      });
-    },
-  },
-  beforeUnmount() {
-    this.observers.forEach((observer) => observer.disconnect());
   },
 };
 </script>
@@ -123,7 +89,12 @@ export default {
 }
 .projectListWrapper {
   padding: 0rem 5rem 4rem;
-
+  @media (min-width: $big-desktop) {
+    padding: 0rem 20rem 4rem;
+  }
+  @media (max-width: $tablet) {
+    padding: 0rem 7rem 4rem;
+  }
   @media (max-width: $mobile) {
     padding: 5% 1.5rem 8rem;
   }
@@ -275,5 +246,8 @@ export default {
   display: flex;
 
   justify-content: center;
+}
+.scale-animation {
+  animation: scaleAnimation 0.5s ease-out;
 }
 </style>

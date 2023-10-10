@@ -53,8 +53,10 @@ export default {
       }
     }
   }
-  padding: 1.5rem;
+  padding: 2rem;
   width: 45vw;
+  max-width: 900px;
+  min-height: 10vw;
   box-sizing: border-box;
   @media (max-width: $tablet) {
     width: 100%;

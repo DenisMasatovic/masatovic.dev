@@ -43,7 +43,7 @@ export default {
     &:hover {
       transform: scale(1.05); /* Scale the size of the card by 20% on hover */
 
-      .cardImages{
+      .cardImages {
         opacity: 1 !important;
       }
       .cardTitle,
@@ -53,10 +53,11 @@ export default {
       }
     }
   }
-  padding: 1.5rem;
-  height: 12vw;
-  width: 38vw;
-
+  padding: 2rem;
+  height: 15vw;
+  width: 42vw;
+  box-sizing: border-box;
+  max-width: 900px;
   @media (max-width: $tablet) {
     height: 175px;
     width: 100%;
@@ -91,10 +92,12 @@ export default {
       align-items: flex-end;
       opacity: 70%;
 
-
       img.cardImage {
         height: 80px;
         object-fit: cover;
+        @media (min-width: $big-desktop) {
+          height: 120px;
+        }
         @media (max-width: $tablet) {
           width: auto;
         }

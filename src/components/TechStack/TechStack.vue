@@ -61,6 +61,12 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  @media (min-width: $big-desktop) {
+    padding: 0rem 20rem 4rem;
+  }
+  @media (max-width: $tablet) {
+    padding: 0rem 7rem 4rem;
+  }
   @media (max-width: $mobile) {
     padding: 5% 1.5rem 8rem;
     gap: 2rem;
@@ -85,8 +91,8 @@ export default {
     text-align: start;
     margin-bottom: 2rem;
     @media (max-width: $mobile) {
-        font-size: $font-size-md;
-      }
+      font-size: $font-size-md;
+    }
   }
   .callToAction {
     display: flex;

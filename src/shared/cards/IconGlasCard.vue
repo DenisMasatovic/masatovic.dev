@@ -18,7 +18,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
+  padding: 2rem;
+  
+  
   background-image: linear-gradient(
       155deg,
       rgba(255, 255, 255, 0.4) 1.06%,
@@ -48,10 +50,10 @@ export default {
   }
 }
 .mainCard {
-  padding: 2rem;
-  height: 500px;
-  width: 22vw;
-
+  height: 100%;
+  width: 30vw;
+  box-sizing: border-box;
+  max-width: 600px;
   @media (max-width: $tablet) {
     height: 200px;
     width: 100%;
@@ -89,10 +91,9 @@ export default {
 }
 
 .subCard {
-  padding: 1.5rem;
-  height: 14vw;
   width: 22vw;
-
+  box-sizing: border-box;
+  max-width: 600px;
   @media (max-width: $tablet) {
     height: 125px;
     width: 100%;

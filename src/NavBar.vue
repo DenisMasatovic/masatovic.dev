@@ -39,9 +39,14 @@
     </div>
   </div>
   <div v-if="!isDesktopSize" class="mobileNavBarWrapper">
-    <div class="menu-icon" @click="showMobileNav = !showMobileNav">
-      <input class="menu-icon__cheeckbox" type="checkbox" id="burger" />
-      <div>
+    <div class="menu-icon">
+      <input
+        class="menu-icon__cheeckbox"
+        type="checkbox"
+        id="burger"
+        v-model="showMobileNav"
+      />
+      <div @click="toggleMobileNav">
         <span></span>
         <span></span>
       </div>
@@ -53,8 +58,10 @@
     </div>
   </div>
 </template>
+
 <script>
 import MyButton from "./shared/MyButton.vue";
+
 export default {
   components: {
     MyButton,
@@ -79,6 +86,9 @@ export default {
     },
   },
   methods: {
+    toggleMobileNav() {
+      this.showMobileNav = !this.showMobileNav;
+    },
     redirectToHome() {
       this.$router.push("/");
       this.navMenuEnabled
@@ -96,11 +106,17 @@ export default {
 
 .navBarWrapper {
   padding: 3rem 5rem;
+
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   max-height: 15vh;
+  @media (min-width: $big-desktop) {
+  max-height: 20vh;
+
+    padding: 5rem 20rem;
+  }
   .leftHalf {
     width: 30%;
     z-index: 1;
@@ -127,8 +143,7 @@ export default {
   display: flex;
   max-height: 10vh;
   padding: 10% 1.5rem;
-  box-sizing: border-box; // Add this line
-
+  box-sizing: border-box;
   position: relative;
   :root {
     --bar-bg: #fff;
@@ -141,10 +156,6 @@ export default {
     height: 5%;
     cursor: pointer;
     margin-bottom: 5px;
-    @media (max-width: $mobile) {
-      font-size: $font-size-xl;
-      margin-bottom: 0;
-    }
     .menu-icon__cheeckbox {
       display: block;
       width: 100%;
@@ -165,10 +176,6 @@ export default {
       bottom: 0;
       width: 22px;
       height: 12px;
-      @media (max-width: $mobile) {
-        width: 18px;
-        height: 12px;
-      }
     }
     span {
       position: absolute;
@@ -186,7 +193,6 @@ export default {
         bottom: 0;
       }
     }
-    &.active,
     .menu-icon__cheeckbox:checked + div {
       span {
         &:first-of-type {
@@ -196,26 +202,6 @@ export default {
         &:last-of-type {
           transform: rotate(-45deg);
           bottom: 5px;
-        }
-      }
-    }
-
-    &.active:hover span:first-of-type,
-    &.active:hover span:last-of-type,
-    &:hover .menu-icon__cheeckbox:checked + div span:first-of-type,
-    &:hover .menu-icon__cheeckbox:checked + div span:last-of-type {
-      width: 22px;
-    }
-
-    &:hover {
-      // no need hover effect on mobile.
-      @media (min-width: 1024px) {
-        span:first-of-type {
-          width: 26px;
-        }
-
-        span:last-of-type {
-          width: 12px;
         }
       }
     }
