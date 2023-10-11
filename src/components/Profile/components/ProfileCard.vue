@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      birthday: new Date(2001, 5, 8), // Note: Month is zero-based, so June is 5.
+      birthday: new Date(2001, 5, 8), 
       email: "kontakt@masatovic.dev",
     };
   },
@@ -62,18 +62,17 @@ export default {
       rgba(255, 255, 255, 0) 100%
     ),
     url("https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Ffrost.png?alt=media");
-  //background-size: cover; /* This will scale the image to cover the entire element */
-  background-repeat: repeat; /* This will prevent the image from repeating */
+  background-repeat: repeat; 
   border: 1px solid rgba(183, 183, 183, 0.4);
   border-radius: 25px;
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px);
   z-index: 10;
   position: relative;
-  transition: transform 0.3s ease; /* Add transition effect for smooth scaling */
+  transition: transform 0.3s ease; 
   @media (min-width: $tablet) {
     &:hover {
-      transform: scale(1.05); /* Scale the size of the card by 20% on hover */
+      transform: scale(1.05); 
     }
   }
   padding: 2rem;

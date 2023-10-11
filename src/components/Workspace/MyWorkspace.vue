@@ -107,15 +107,15 @@ export default {
 
   .cards {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Adjust this value to your preference */
-    grid-gap: 5rem; /* This sets the horizontal and vertical gaps between grid items */
+    grid-template-columns: 1fr 2fr; 
+    grid-gap: 5rem; 
     height: 100%;
     @media (min-width: $big-desktop) {
       height: 90%;
     }
     @media (max-width: $tablet) {
       display: flex;
-      flex-direction: column; // center the items vertically
+      flex-direction: column; 
       gap: 3rem;
     }
     @media (max-width: $mobile) {
@@ -125,12 +125,12 @@ export default {
     .mainCard {
       @media (max-width: $tablet) {
         display: flex;
-        justify-content: flex-start; // center the items horizontally
-        align-items: flex-start; // center the items vertically
+        justify-content: flex-start; 
+        align-items: flex-start; 
       }
       .mainCard {
         animation: scaleAnimation 0.5s ease-out;
-        animation-delay: 0s; // starts immediately
+        animation-delay: 0s; 
       }
     }
 
@@ -156,13 +156,13 @@ export default {
       .subCard:nth-child(1),
       .subCard:nth-child(3) {
         animation: scaleAnimation 0.5s ease-out;
-        animation-delay: 0.1s; // starts after 1s
+        animation-delay: 0.1s; 
       }
 
       .subCard:nth-child(2),
       .subCard:nth-child(4) {
         animation: scaleAnimation 0.5s ease-out;
-        animation-delay: 0.2s; // starts after 1.5s
+        animation-delay: 0.2s; 
       }
     }
   }

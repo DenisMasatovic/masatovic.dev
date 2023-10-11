@@ -57,7 +57,7 @@ export default {
       return stackMap[this.type] || null;
     },
     chunkedStack() {
-      let chunkSize = this.isMobileSize ? 2 : 4; // Change this value to control items per row
+      let chunkSize = this.isMobileSize ? 2 : 4;
       let results = [];
       for (let i = 0; i < this.stack.length; i += chunkSize) {
         results.push(this.stack.slice(i, i + chunkSize));
@@ -87,15 +87,14 @@ export default {
     observeVisibility() {
       this.stackObjects.forEach((stackObject, index) => {
         stackObject.style.opacity = 0;
-        this.animationPlayed[index] = false; // initialize each flag to false
+        this.animationPlayed[index] = false;
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (!this.animationPlayed[index]) {
-              // check the flag for the current element
               if (entry.isIntersecting) {
                 stackObject.classList.add("fade-in-bottom");
                 stackObject.style.animationDelay = `${index * 0.1}s`;
-                this.animationPlayed[index] = true; // set the flag for the current element to true
+                this.animationPlayed[index] = true;
               } else {
                 stackObject.classList.remove("fade-in-bottom");
                 stackObject.style.animationDelay = "0s";

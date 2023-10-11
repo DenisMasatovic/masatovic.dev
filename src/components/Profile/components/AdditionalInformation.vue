@@ -40,18 +40,16 @@ export default {
   methods: {
     observeVisibility() {
       this.$nextTick(() => {
-        // Ensure the DOM is updated
         this.chapterElements.forEach((chapterElement, index) => {
           chapterElement.style.opacity = 0;
-          this.animationPlayed[index] = false; // Initialize each flag to false
+          this.animationPlayed[index] = false; 
           const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
               if (!this.animationPlayed[index] && !this.isDesktopSize) {
-                // Check the flag and isDesktopSize for the current element
                 if (entry.isIntersecting) {
                   chapterElement.classList.add("fade-in-bottom");
                   chapterElement.style.animationDelay = `${index * 0.1}s`;
-                  this.animationPlayed[index] = true; // Set the flag for the current element to true
+                  this.animationPlayed[index] = true; 
                 } else {
                   chapterElement.classList.remove("fade-in-bottom");
                   chapterElement.style.animationDelay = "0s";

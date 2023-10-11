@@ -32,15 +32,14 @@ export default {
     observeVisibility() {
       this.stackObjects.forEach((stackObject, index) => {
         stackObject.style.opacity = 0;
-        this.animationPlayed[index] = false; // initialize each flag to false
+        this.animationPlayed[index] = false; 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (!this.animationPlayed[index]) {
-              // check the flag for the current element
               if (entry.isIntersecting) {
                 stackObject.classList.add("fade-in-bottom");
                 stackObject.style.animationDelay = `${index * 0.1}s`;
-                this.animationPlayed[index] = true; // set the flag for the current element to true
+                this.animationPlayed[index] = true; 
               } else {
                 stackObject.classList.remove("fade-in-bottom");
                 stackObject.style.animationDelay = "0s";
@@ -71,7 +70,7 @@ export default {
   display: flex;
   justify-content: space-around;
   @media (max-width: $tablet) {
-    display: flex; //maybe has to bee changed
+    display: flex;
   }
   @media (max-width: $mobile) {
     display: grid;

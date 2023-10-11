@@ -84,9 +84,9 @@ export default {
     display: flex;
     gap: 3rem;
     overflow-x: scroll;
-    scrollbar-width: none; /* For Firefox */
+    scrollbar-width: none; 
     &::-webkit-scrollbar {
-      display: none; /* For Chrome, Safari, and Opera */
+      display: none; 
     }
     @media (max-width: $mobile) {
       gap: 2rem;

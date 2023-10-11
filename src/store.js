@@ -1,4 +1,3 @@
-// store.js or store/index.js
 import { createStore } from "vuex";
 
 export default createStore({
@@ -15,7 +14,6 @@ export default createStore({
     },
   },
   actions: {
-    // your actions here
   },
   getters: {
     showMobileNavigation(state) {
@@ -26,6 +24,5 @@ export default createStore({
     },
   },
   modules: {
-    // your modules here
   },
 });

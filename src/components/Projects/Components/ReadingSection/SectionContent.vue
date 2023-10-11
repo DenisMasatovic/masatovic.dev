@@ -62,7 +62,7 @@ export default {
     },
   },
   beforeUnmount() {
-    this.observers.forEach((observer) => observer.disconnect()); // disconnect all observers
+    this.observers.forEach((observer) => observer.disconnect()); 
   },
 };
 </script>

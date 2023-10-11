@@ -66,9 +66,9 @@ export default {
   .slogan {
     width: 35%;
     display: flex;
-    flex-direction: column; // Changed to column to stack text vertically
+    flex-direction: column; 
     justify-content: flex-end;
-    align-items: flex-start; // Aligns text to the left
+    align-items: flex-start; 
     position: absolute;
     right: 10%;
     top: 25%;
@@ -77,18 +77,19 @@ export default {
       height: 25%;
       width: 100%;
       justify-content: center;
-      align-items: center; // Center aligns text on smaller screens
+      align-items: center;
     }
 
     @media (max-width: $mobile) {
       width: 100%;
       justify-content: center;
-      align-items: center; // Center aligns text on mobile
+      align-items: center;
+      height: 15%;
     }
 
     .static-text-container,
     .typed-text-container {
-      width: 100%; // Takes full width of the parent container
+      width: 100%;
     }
 
     span,
@@ -110,7 +111,7 @@ export default {
     }
 
     .typed-text-container {
-      margin-top: 1rem; // Adds space above the typed text
+      margin-top: 1rem; 
     }
   }
 }

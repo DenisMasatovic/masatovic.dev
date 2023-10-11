@@ -130,7 +130,7 @@ export default {
     }
     .project {
       animation: scaleAnimation 0.5s ease-out;
-      animation-delay: var(--animation-delay, 0s); // Use the CSS variable here
+      animation-delay: var(--animation-delay, 0s); 
       position: relative;
     }
 

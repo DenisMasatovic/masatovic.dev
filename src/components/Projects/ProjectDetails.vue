@@ -41,14 +41,10 @@ export default {
   data() {
     return {
       project: {},
-      //observers: [],
     };
   },
   mounted() {
     this.fetchProjectData();
-    this.$nextTick(() => {
-      //this.observeCTAVisibility();
-    });
   },
   methods: {
     fetchProjectData() {

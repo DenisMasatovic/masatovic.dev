@@ -41,7 +41,6 @@ const routes = [
     name: "Partner",
     component: () => import("@/components/Partners/PartnersWrapper.vue"),
   },
-  // other routes...
 ];
 
 const router = createRouter({

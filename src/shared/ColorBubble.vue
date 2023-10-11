@@ -28,8 +28,7 @@ export default {
     },
   },
   created() {
-    // Generating random duration for float animation
-    this.floatDuration = (Math.random() * 2 + 2).toFixed(2) + 's'; // Between 2s and 4s
+    this.floatDuration = (Math.random() * 2 + 2).toFixed(2) + 's'; 
   },
   mounted() {
     setTimeout(() => {

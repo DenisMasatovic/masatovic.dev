@@ -137,13 +137,7 @@ export default {
     font-weight: bold;
   }
 }
-/* .slider[data-open="true"] {
-  animation: slideIn 0.5s forwards;
-}
 
-.slider[data-open="false"] {
-  animation: slideOut 0.5s forwards;
-} */
 
 .slide-in {
   animation: slideIn 0.5s forwards;

@@ -102,7 +102,6 @@ export default {
   },
   methods: {
     submitForm() {
-      // Add form submission logic here (like sending data to server, etc.)
       console.log("Form submitted:", this.formData);
     },
   },
@@ -136,18 +135,17 @@ export default {
       rgba(255, 255, 255, 0) 100%
     ),
     url("https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Ffrost.png?alt=media");
-  //background-size: cover; /* This will scale the image to cover the entire element */
-  background-repeat: repeat; /* This will prevent the image from repeating */
+  background-repeat: repeat; 
   border: 1px solid rgba(183, 183, 183, 0.4);
   border-radius: 25px;
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px);
   z-index: 10;
   position: relative;
-  transition: transform 0.3s ease; /* Add transition effect for smooth scaling */
+  transition: transform 0.3s ease; 
   @media (min-width: $tablet) {
     &:hover {
-      transform: scale(1.05); /* Scale the size of the card by 20% on hover */
+      transform: scale(1.05); 
     }
   }
   padding: 2.5rem;
@@ -199,7 +197,7 @@ export default {
       }
       input,
       textarea {
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); // Adjust values as needed
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
       }
     }
   }
@@ -230,21 +228,16 @@ export default {
   color: red;
 }
 
-/* Or with vendor prefixes for wider support: */
 .error::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
   color: red;
 }
 .error::-moz-placeholder {
-  /* Firefox 19+ */
   color: red;
 }
 .error:-ms-input-placeholder {
-  /* IE 10+ */
   color: red;
 }
 .error:-moz-placeholder {
-  /* Firefox 18- */
   color: red;
 }
 </style>

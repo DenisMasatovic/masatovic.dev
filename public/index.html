@@ -9,7 +9,6 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script>
         window.addEventListener('load', () => {
-            // Organizing assets with comments
             const assetsToPreload = {
                 // Frost
                 'Frost': ['images/coreAssets/images/frost.png'],
@@ -59,7 +58,6 @@
 
             // Preload assets
             Object.keys(assetsToPreload).forEach(category => {
-                console.log(`Preloading ${category}...`);  // Optional: log category being preloaded
                 assetsToPreload[category].forEach(assetPath => {
                     const linkEl = document.createElement('link');
                     linkEl.rel = 'preload';

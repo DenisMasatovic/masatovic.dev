@@ -68,7 +68,7 @@ body {
 }
 html,
 body {
-  background-color: #171717; /* Replace with your color */
+  background-color: #171717; 
 }
 #app {
   min-height: 100vh;
