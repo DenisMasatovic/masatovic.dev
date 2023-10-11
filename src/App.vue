@@ -68,7 +68,7 @@ body {
 }
 html,
 body {
-  background-color: #171717; 
+  background-color: #171717;
 }
 #app {
   min-height: 100vh;
@@ -89,6 +89,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0%;
+  
   @media (min-width: $big-desktop) {
     right: 15%;
   }

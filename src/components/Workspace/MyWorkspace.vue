@@ -90,6 +90,9 @@ export default {
   height: 80vh;
   padding: 2rem 5rem;
 
+  @media (min-width: $default-desktop) {
+    padding: 2rem 10rem;
+  }
   @media (min-width: $big-desktop) {
     padding: 2rem 20rem;
   }
@@ -107,15 +110,15 @@ export default {
 
   .cards {
     display: grid;
-    grid-template-columns: 1fr 2fr; 
-    grid-gap: 5rem; 
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5rem;
     height: 100%;
     @media (min-width: $big-desktop) {
       height: 90%;
     }
     @media (max-width: $tablet) {
       display: flex;
-      flex-direction: column; 
+      flex-direction: column;
       gap: 3rem;
     }
     @media (max-width: $mobile) {
@@ -125,12 +128,12 @@ export default {
     .mainCard {
       @media (max-width: $tablet) {
         display: flex;
-        justify-content: flex-start; 
-        align-items: flex-start; 
+        justify-content: flex-start;
+        align-items: flex-start;
       }
       .mainCard {
         animation: scaleAnimation 0.5s ease-out;
-        animation-delay: 0s; 
+        animation-delay: 0s;
       }
     }
 
@@ -150,19 +153,18 @@ export default {
         column-gap: 3rem;
         padding: 0;
         column-gap: 2rem;
-
       }
 
       .subCard:nth-child(1),
       .subCard:nth-child(3) {
         animation: scaleAnimation 0.5s ease-out;
-        animation-delay: 0.1s; 
+        animation-delay: 0.1s;
       }
 
       .subCard:nth-child(2),
       .subCard:nth-child(4) {
         animation: scaleAnimation 0.5s ease-out;
-        animation-delay: 0.2s; 
+        animation-delay: 0.2s;
       }
     }
   }
@@ -174,6 +176,10 @@ export default {
     left: 1%;
     @media (min-width: $big-desktop) {
       left: 10%;
+      top: 10%;
+    }
+    @media (min-width: $default-desktop) {
+      left: 5%;
       top: 10%;
     }
     @media (max-width: $tablet) {
@@ -194,6 +200,9 @@ export default {
     top: 25%;
     left: 25%;
     @media (min-width: $big-desktop) {
+      left: 32%;
+    }
+    @media (min-width: $default-desktop) {
       left: 32%;
     }
     @media (max-width: $tablet) {
@@ -219,6 +228,9 @@ export default {
     left: 3%;
     @media (min-width: $big-desktop) {
       left: 10%;
+    }
+    @media (min-width: $default-desktop) {
+      left: 7%;
     }
     @media (max-width: $tablet) {
       width: 10rem;

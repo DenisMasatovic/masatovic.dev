@@ -30,6 +30,9 @@ export default {
   @media (min-width: $big-desktop) {
     padding: 2rem 30rem;
   }
+  @media (min-width: $default-desktop) {
+    padding: 2rem 20rem;
+  }
   overflow: hidden;
   @media (max-width: $tablet) {
     flex-direction: column-reverse;

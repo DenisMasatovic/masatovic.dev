@@ -22,7 +22,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  @media (min-width: $big-desktop) {
+  @media (min-width: $default-desktop) {
     justify-content: flex-start;
   }
   .quote {
@@ -39,6 +39,9 @@ export default {
     right: 0%;
     @media (min-width: $big-desktop) {
       right: 15%;
+    }
+    @media (min-width: $default-desktop) {
+      right: 25%;
     }
     @media (max-width: $mobile) {
       right: -20%;

@@ -29,18 +29,18 @@ export default {
       rgba(255, 255, 255, 0) 100%
     ),
     url("https://firebasestorage.googleapis.com/v0/b/masatovic-dev.appspot.com/o/images%2FcoreAssets%2Fimages%2Ffrost.png?alt=media");
-  background-repeat: repeat; 
+  background-repeat: repeat;
   border: 1px solid rgba(183, 183, 183, 0.4);
   border-radius: 25px;
   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px);
   z-index: 10;
   position: relative;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
   cursor: pointer;
   @media (min-width: $tablet) {
     &:hover {
-      transform: scale(1.05); 
+      transform: scale(1.05);
 
       .cardImages {
         opacity: 1 !important;
@@ -57,6 +57,9 @@ export default {
   width: 42vw;
   box-sizing: border-box;
   max-width: 900px;
+  @media (min-width: $default-desktop) and (max-width: $big-desktop) {
+    max-width: 750px;
+  }
   @media (max-width: $tablet) {
     height: 225px;
     width: 100%;
@@ -96,6 +99,9 @@ export default {
         object-fit: cover;
         @media (min-width: $big-desktop) {
           height: 120px;
+        }
+        @media (min-width: $default-desktop) {
+          height: 100px;
         }
         @media (max-width: $tablet) {
           width: auto;

@@ -50,6 +50,9 @@ export default {
     height: 6rem;
     top: 25%;
     left: 24%;
+    @media (min-width: $default-desktop) and (max-width: $big-desktop) {
+      left: 20%;
+    }
     @media (max-width: $tablet) {
       width: 8rem;
       height: 8rem;
@@ -85,6 +88,9 @@ export default {
     height: 5rem;
     bottom: -15%;
     right: 25%;
+    @media (min-width: $default-desktop) and (max-width: $big-desktop) {
+      right: 22%;
+    }
     @media (max-width: $tablet) {
       width: 6rem;
       height: 6rem;

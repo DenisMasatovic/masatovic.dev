@@ -32,6 +32,9 @@ export default {
   @media (min-width: $big-desktop) {
     padding: 2rem 20rem;
   }
+  @media (min-width: $default-desktop) {
+    padding: 2rem 10rem;
+  }
   @media (max-width: $tablet) {
     flex-direction: column;
     padding: 2rem 7rem;
@@ -57,6 +60,9 @@ export default {
       @media (min-width: $big-desktop) {
         left: -10%;
       }
+      @media (min-width: $default-desktop) {
+        left: -10%;
+      }
       @media (max-width: $tablet) {
         width: 11rem;
         height: 11rem;
@@ -77,6 +83,9 @@ export default {
       @media (min-width: $big-desktop) {
         right: 10%;
       }
+      @media (min-width: $default-desktop) {
+        right: -8%;
+      }
       @media (max-width: $tablet) {
         width: 8rem;
         height: 8rem;
@@ -95,6 +104,10 @@ export default {
       @media (min-width: $big-desktop) {
         left: -5%;
         bottom: -2%;
+      }
+      @media (min-width: $default-desktop) {
+        left: -5%;
+        bottom: -3%;
       }
       @media (max-width: $tablet) {
         width: 7rem;

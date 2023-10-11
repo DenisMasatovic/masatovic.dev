@@ -62,6 +62,9 @@ export default {
   @media (min-width: $big-desktop) {
     padding: 0rem 20rem 4rem;
   }
+  @media (min-width: $default-desktop) {
+    padding: 0rem 10rem 4rem;
+  }
   display: flex;
   flex-direction: column;
   gap: 5rem;

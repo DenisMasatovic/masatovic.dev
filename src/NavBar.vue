@@ -112,8 +112,11 @@ export default {
   align-items: flex-end;
   justify-content: space-between;
   max-height: 15vh;
+  @media (min-width: $default-desktop) {
+    padding: 3rem 10rem;
+  }
   @media (min-width: $big-desktop) {
-  max-height: 20vh;
+    max-height: 20vh;
 
     padding: 5rem 20rem;
   }

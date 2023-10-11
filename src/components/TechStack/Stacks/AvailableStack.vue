@@ -279,6 +279,9 @@ export default {
       img {
         height: 10vw;
         max-height: 200px;
+        @media (min-width: $default-desktop) and (max-width: $big-desktop) {
+          max-height: 180px;
+        }
         @media (max-width: $tablet) {
           height: 9vw;
           object-fit: contain;
