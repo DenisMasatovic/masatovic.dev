@@ -99,6 +99,7 @@ export default {
       @media (max-width: $tablet) {
         width: 7rem;
         height: 7rem;
+        left: -5%;
       }
       @media (max-width: $mobile) {
         width: 5rem;

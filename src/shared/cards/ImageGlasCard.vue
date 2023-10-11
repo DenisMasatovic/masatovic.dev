@@ -59,12 +59,12 @@ export default {
   box-sizing: border-box;
   max-width: 900px;
   @media (max-width: $tablet) {
-    height: 175px;
+    height: 225px;
     width: 100%;
   }
   @media (max-width: $mobile) {
     padding: 1rem;
-    height: 120px;
+    height: 150px;
   }
   .cardTitle {
     font-size: $font-size-xl;

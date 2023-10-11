@@ -55,7 +55,7 @@ export default {
   box-sizing: border-box;
   max-width: 600px;
   @media (max-width: $tablet) {
-    height: 200px;
+    height: 250px;
     width: 100%;
     padding: 1.5rem;
   }
@@ -95,12 +95,13 @@ export default {
   box-sizing: border-box;
   max-width: 600px;
   @media (max-width: $tablet) {
-    height: 125px;
+    height: 200px;
     width: 100%;
   }
   @media (max-width: $mobile) {
     padding: 1rem;
-    height: 100px;
+    height: 125px;
+
   }
   .cardTitle {
     font-size: $font-size-xl;

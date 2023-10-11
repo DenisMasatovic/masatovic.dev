@@ -114,11 +114,13 @@ export default {
       height: 90%;
     }
     @media (max-width: $tablet) {
+      display: flex;
       flex-direction: column; // center the items vertically
-      gap: 2rem;
+      gap: 3rem;
     }
     @media (max-width: $mobile) {
-      gap: 1rem;
+      display: flex;
+      gap: 2.5rem;
     }
     .mainCard {
       @media (max-width: $tablet) {
@@ -141,12 +143,14 @@ export default {
       justify-items: flex-end;
       @media (max-width: $tablet) {
         justify-items: center;
-        padding: 1.5rem; // center the items horizontally
         row-gap: 2.5rem;
+        column-gap: 2.5rem;
       }
       @media (max-width: $mobile) {
         column-gap: 3rem;
-        padding: 1rem;
+        padding: 0;
+        column-gap: 2rem;
+
       }
 
       .subCard:nth-child(1),
