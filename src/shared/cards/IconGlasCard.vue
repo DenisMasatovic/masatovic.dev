@@ -60,7 +60,7 @@ export default {
   }
   @media (max-width: $mobile) {
     padding: 1rem;
-    height: 150px;
+    height: 180px;
   }
   .cardTitle {
     font-size: $font-size-xxl;
