@@ -78,7 +78,6 @@ export default {
   align-items: center;
   gap: 5rem;
   div {
-    position: absolute;
     top: 0;
     left: 0;
   }

@@ -75,7 +75,6 @@ export default {
   flex-flow: column;
   align-items: center;
   div {
-    position: absolute;
     top: 0;
     left: 0;
   }
